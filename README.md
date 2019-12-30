@@ -11,3 +11,7 @@ Use the [official](https://wiki.archlinux.org/) documentation or the [PsykeDady]
 * [Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
 * [Performance](https://github.com/mirkobrombin/myarchlinux/blob/master/Performance.md)
 * [Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
+
+## References
+[Improving performance/Boot process](https://wiki.archlinux.org/index.php/Improving_performance/Boot_process)
+[Silent boot](https://wiki.archlinux.org/index.php/Silent_boot)
