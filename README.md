@@ -9,4 +9,5 @@ Use the [official](https://wiki.archlinux.org/) documentation or the [PsykeDady]
 * [System](https://github.com/mirkobrombin/myarchlinux/blob/master/System.md)
 * [Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop.md)
 * [Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
+* [Performance](https://github.com/mirkobrombin/myarchlinux/blob/master/Performance.md)
 * [Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
