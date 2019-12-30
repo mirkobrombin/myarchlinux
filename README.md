@@ -6,7 +6,7 @@ Do not use this example as a complete documentation Arch Linux installation.
 Use the [official](https://wiki.archlinux.org/) documentation or the [PsykeDady](https://github.com/PsykeDady/Archlinux_installazione) book if you are Italian.
 
 ## Summary
-* [Setup](https://github.com/mirkobrombin/myarchlinux/blob/master/Setup.md)
+* [System](https://github.com/mirkobrombin/myarchlinux/blob/master/System.md)
 * [Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop.md)
 * [Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
 * [Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
