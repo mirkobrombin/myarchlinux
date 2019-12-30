@@ -14,4 +14,5 @@ Use the [official](https://wiki.archlinux.org/) documentation or the [PsykeDady]
 
 ## References
 [Improving performance/Boot process](https://wiki.archlinux.org/index.php/Improving_performance/Boot_process)
+
 [Silent boot](https://wiki.archlinux.org/index.php/Silent_boot)
