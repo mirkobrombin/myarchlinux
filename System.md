@@ -104,3 +104,19 @@ swapoff
 sync
 reboot
 ```
+
+## Users
+After reboot I've added a new user:
+```
+useradd -m -g users -G wheel,video,audio,sys,lp,storage,scanner,games,network,disk,input -s /bin/bash my_new_user
+passwd my_new_user
+```
+and decommented on visudo:
+```
+export EDITOR=nano
+visudo
+```
+the line:
+```
+wheel ALL=(ALL) ALL
+```
