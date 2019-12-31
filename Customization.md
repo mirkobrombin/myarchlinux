@@ -149,3 +149,26 @@ git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes
 ./install.sh -v -2
 ```
+
+## Devilspie
+This tool help performs actions on windows as they are created.
+```
+yay -S devilspie
+```
+create rules path `~/.devilspie`.
+
+### Example rules
+Example for Visual Studio Code, file `~/.devilspie/vscode.ds`:
+```
+(if (contains (window_class) "code-oss")
+
+    (begin
+
+        (spawn_async (str "xprop -id " (window_xid) " -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 "))
+
+        (spawn_async (str "xprop -id " (window_xid) " -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xdfffffff"))
+
+    )
+
+)
+```
