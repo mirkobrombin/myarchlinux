@@ -14,7 +14,7 @@ pacman -S trojita
 ```
 So I remove akonadi and all the KDE Organization package:
 ```
-pacman -Rc akonadi mariadb
+pacman -Rc akonadi mariadb mariadb-clients mariadb-libs kaddressbook kalarm kmail kmail-account-wizard knotes kontact kopete korganizer
 ```
 Since the default icon is a little ugly, I've created a new one in `/data/icons/trojita`.
 
