@@ -50,7 +50,7 @@ swapon /dev/nvme0n1p2
 
 ## System installation
 ```
-pacstrap /mnt base base-devel linux linux-firmware net-tools dialog netctl networkmanager wpa_supplicant grub efibootmgr dhcpcd nano
+pacstrap /mnt base base-devel linux linux-firmware net-tools dialog netctl networkmanager wpa_supplicant systemdboot efibootmgr dhcpcd nano
 ```
 
 ## fstab
@@ -61,11 +61,30 @@ arch-chroot /mnt
 ```
 and enable swap in `nano /etc/fstab`.
 
-## GRUB
-Go with the grub installation:
+## ~~GRUB~~
+Replaced by systemdboot.
+
+~~Go with the grub installation:~~
 ```
 grub-install /dev/nvme0n1p3
 grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## Systemdboot
+Go with systemdboot configuration:
+```
+bootctl --path=/boot/efi install
+```
+creating a new loader for archlinux installation in `/boot/efi/loader/entries/arch.conf`:
+```
+title Archlinux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=1b37449b-c8e6-467a-9c28-39d5e65546d1
+```
+add loader at `/boot/efi/loader/loader.conf`:
+```
+default arch
 ```
 
 ## Hostname

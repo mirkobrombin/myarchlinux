@@ -142,8 +142,10 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 ### Colors
 I'm using the Breeze colors with 23% trasparency and blur enabled.
 
-## GRUB
-I'm using the Vimix theme from vinceliuice:
+## ~~GRUB~~
+Replaced by systemdboot.
+
+~~I'm using the Vimix theme from vinceliuice:~~
 ```
 git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes

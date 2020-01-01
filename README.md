@@ -1,18 +1,23 @@
 # My Arch Linux installation
-This is my complete Arch Linux configuration. Result [here](https://gentedilinux.linuxhub.it/show/12-28-2019--09-07-36%20pm-btw-i-use-arch-today).
+This is my complete Arch Linux installation/configuration.
 
-Do not use this example as a complete documentation Arch Linux installation.
+![](https://gentedilinux.linuxhub.it/uploads/pCuUmQa3x2nTAegJ3Wfp.png)
 
-Use the [official](https://wiki.archlinux.org/) documentation or the [PsykeDady](https://github.com/PsykeDady/Archlinux_installazione) book if you are Italian.
+See gentedilinux post [here](https://gentedilinux.linuxhub.it/show/12-31-2019--12-54-38%20pm-btw-i-use-arch).
+
+> Do not use this example as a complete guide for Arch Linux installation.
 
 ## Summary
-* [System](https://github.com/mirkobrombin/myarchlinux/blob/master/System.md)
-* [Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop.md)
-* [Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
-* [Performance](https://github.com/mirkobrombin/myarchlinux/blob/master/Performance.md)
-* [Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
+* [i. System](https://github.com/mirkobrombin/myarchlinux/blob/master/System.md)
+* [ii. Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop.md)
+* [iii. Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
+* [iv. Performance](https://github.com/mirkobrombin/myarchlinux/blob/master/Performance.md)
+* [v. Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
 
 ## References
-[Improving performance/Boot process](https://wiki.archlinux.org/index.php/Improving_performance/Boot_process)
+[ArchWiki](https://wiki.archlinux.org/)
+* [Improving performance/Boot process](https://wiki.archlinux.org/index.php/Improving_performance/Boot_process)
+* [Silent boot](https://wiki.archlinux.org/index.php/Silent_boot)
+   [systemd-boot](https://wiki.archlinux.org/index.php/Systemd-boot)
 
-[Silent boot](https://wiki.archlinux.org/index.php/Silent_boot)
+[PsykeDady Book (IT)](https://github.com/PsykeDady/Archlinux_installazione)
