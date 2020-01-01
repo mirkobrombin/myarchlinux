@@ -41,6 +41,7 @@ options root=1b37449b-c8e6-467a-9c28-39d5e65546d1 quiet splash loglevel=3 vga=cu
 **/etc/fstab**
 * remove `rw` from root (/) and /home options
 * add `noauto,x-systemd.automount` to /home options
+* replace `relatime` with `noatime` for efi e /home partitions
 
 **/etc/mkinitcpio.conf**
 Let systemd check the root filesystem, hide fsck messages during boot (replace udev):
@@ -67,4 +68,10 @@ ExecStart=/usr/lib/systemd/systemd-fsck
 StandardOutput=null
 StandardError=journal+console
 TimeoutSec=0
+```
+
+**Mask lvm2-monitor service**
+Since I don't use LVM, I mask the service to prevent it from running (1s gained at boot time):
+```
+systemctl mask lvm2-monitor
 ```
