@@ -80,7 +80,7 @@ creating a new loader for archlinux installation in `/boot/efi/loader/entries/ar
 title Archlinux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=1b37449b-c8e6-467a-9c28-39d5e65546d1
+options root=UUID=1b37449b-c8e6-467a-9c28-39d5e65546d1
 ```
 add loader at `/boot/efi/loader/loader.conf`:
 ```
