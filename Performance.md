@@ -35,7 +35,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 * set resume partition for hibernation
 
 ```
-options root=1b37449b-c8e6-467a-9c28-39d5e65546d1 quiet splash loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 vt.global_cursor_default=0
+options root=UUID=1b37449b-c8e6-467a-9c28-39d5e65546d1 quiet splash loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 vt.global_cursor_default=0
 ```
 
 **/etc/fstab**
