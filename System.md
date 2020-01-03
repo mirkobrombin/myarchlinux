@@ -50,7 +50,7 @@ swapon /dev/nvme0n1p2
 
 ## System installation
 ```
-pacstrap /mnt base base-devel linux linux-firmware net-tools dialog netctl networkmanager wpa_supplicant systemdboot efibootmgr dhcpcd nano
+pacstrap /mnt base base-devel linux linux-firmware net-tools dialog netctl networkmanager wpa_supplicant efibootmgr dhcpcd nano
 ```
 
 ## fstab

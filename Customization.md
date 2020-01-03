@@ -139,6 +139,16 @@ and set as theme on `~/.zshrc`:
 ZSH_THEME=powerlevel10k/powerlevel10k
 ```
 
+### ZSH plugins
+**zsh-syntax-highlighting**
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+add to `.zshrc':
+```
+plugins=( [plugins...] zsh-syntax-highlighting)
+```
+
 ### Colors
 I'm using the Breeze colors with 23% trasparency and blur enabled.
 
