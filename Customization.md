@@ -101,16 +101,13 @@ The widget is Lock/Logout.
 I've disabled everything except the logout button.
 
 ### Second panel
-This panel is placed on bottom the screen.
+This panel is placed on right the screen with autohide.
 
 #### Layout
 ```
 ____________________________
 |Process manager only icons|
 ```
-
-#### Margins
-The panel is centered, the bottom margins are minimized towards the center of the screen, the upper ones are extended to the edges of the screen.
 
 ## Terminal/Zsh
 As shell I am using ZSH with oh-my-zsh and Powerlevel10K.
