@@ -1,9 +1,9 @@
 # My Arch Linux installation
 This is my complete Arch Linux installation/configuration.
 
-![](https://gentedilinux.linuxhub.it/uploads/pCuUmQa3x2nTAegJ3Wfp.png)
+![](https://gentedilinux.linuxhub.it/uploads/n1eFRoCBgOrWGwghMjQk.png)
 
-See gentedilinux post [here](https://gentedilinux.linuxhub.it/show/12-31-2019--12-54-38%20pm-btw-i-use-arch).
+See gentedilinux post [here](https://gentedilinux.linuxhub.it/show/01-16-2020--08-46-26%20pm-btw-myarchlinux).
 
 > Do not use this example as a complete guide for Arch Linux installation.
 

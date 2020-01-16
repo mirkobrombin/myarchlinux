@@ -101,7 +101,7 @@ The widget is Lock/Logout.
 I've disabled everything except the logout button.
 
 ### Second panel
-This panel is placed on right the screen with autohide.
+This panel is placed on the screen bottom.
 
 #### Layout
 ```
