@@ -1,9 +1,37 @@
 # Desktop installation
-In my configuration I use the Plasma Desktop Environment from KDE.
+I replaced KDE Plasma with GNOME (below both installations).
 
 ## Utility
 ```
 pacman -S linux-headers os-prober git bash-completion man-db man-pages
+```
+
+## Network manager
+During the installation I installed the `networkmanager` package, let's enable the service:
+```
+systemctl enable NetworkManager
+```
+
+## yay installation
+Yet another yogurt:
+```
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+
+## Xorg installation
+```
+pacman -S xorg-server xorg-xinit
+```
+
+## GNOME
+```
+sudo pacman -S gnome gnome-extra
+```
+The GDM Display Manager come with default GNOME installation:
+```
+sudo systemctl enable gdm
 ```
 
 ## KDE
@@ -15,25 +43,6 @@ sudo pacman -S plasma kde-applications kdeconnect
 The installation includes the Display Manager SDDM, so enable the service to use it:
 ```
 sudo systemctl enable sddm
-```
-
-### Network manager
-During the installation I installed the `networkmanager` package, let's enable the service:
-```
-systemctl enable NetworkManager
-```
-
-### yay installation
-Yet another yogurt:
-```
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
-
-## Xorg installation
-```
-pacman -S xorg-server xorg-xinit
 ```
 
 ## Drivers

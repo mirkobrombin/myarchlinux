@@ -1,0 +1,20 @@
+headerbar {
+    min-height: 38px;
+    padding-left: 4px;                                                               
+    padding-right: 4px;
+}
+headerbar entry,
+headerbar spinbutton,
+headerbar button,
+headerbar separator {
+    margin-top: 2px;                                                           
+    margin-bottom: 2px;
+}
+.default-decoration {
+    min-height: 0;                                                       
+    padding: 2px
+}
+.default-decoration .titlebutton {
+    min-height: 26px;                                                  
+    min-width: 26px;
+}

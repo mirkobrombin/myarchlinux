@@ -1,6 +1,55 @@
 # Customization
 
-## Theme
+## GNOME
+I recently replaced KDE at GNOME for better consistency throughout the user experience.
+
+### Theme & Icons
+I have a fetish for the official Adwaita theme and icons.
+
+The only problem with the Adwaita theme is the large size of the CSD/Titlebar. I solved this problem with a custom rule.
+
+To do this I've created the file in location `~/.config/gtk-3.0/gtk.css` with content:
+```
+headerbar {
+    min-height: 38px;
+    padding-left: 4px;                                                               
+    padding-right: 4px;
+}
+headerbar entry,
+headerbar spinbutton,
+headerbar button,
+headerbar separator {
+    margin-top: 2px;                                                           
+    margin-bottom: 2px;
+}
+.default-decoration {
+    min-height: 0;                                                       
+    padding: 2px
+}
+.default-decoration .titlebutton {
+    min-height: 26px;                                                  
+    min-width: 26px;
+}
+```
+Thanks to Reddit user LapoC.
+
+### Extensions
+Let's integrate Brave Browser with GNOME:
+```
+sudo pacman -S chrome-gnome-shell 
+```
+#### Installed Extensions
+- Dynamic panel transparent
+- Kstatusnotifieritem/appindicator support
+- Straight top bar
+
+### GNOME Tweaks
+```
+sudo pacman -S gnome-tweaks
+```
+
+## KDE
+### Theme
 I'm using Layan Theme in variant Nayal (by me owo), this version uses the stock Breeze icons and remove some pony-style effects.
 
 https://github.com/mirkobrombin/Nayal/releases
@@ -10,35 +59,35 @@ It includes:
 * Kvantum theme
 * Colors style
 
-### Icons
+#### Icons
 I am a bad person and I'm using the standard Breeze icons. I definitely have a place in hell for this.
 
-### GTK theme
+#### GTK theme
 I'm using 2 different themes:
 * GTK2 use the Adapta-DeepPurple theme
 * GTK3 use the Layan-dark theme
 
-## Kvantum
+### Kvantum
 I'm using kvantum to add some blur to the windows:
 ```
 yay -S kvantum
 ```
 
-## Panels
+### Panels
 In my configuration I'm using 2 panels:
 * one with menu applications, global menu, window title, popup launcher, systemtray, time (with date) and logout
 * one centered without fullsize with process manager in only icons version
 
-### First panel
+#### First panel
 This panel is placed on top the screen.
 
-#### Layout
+**Layout**
 ```
 _______________________________________________________________________________________
 |X|Window title|Global menu|Fullsized space|Popup Launcher|Systemtray|Date/Time|Logout|
 ```
 
-#### Window title
+**Window title**
 The widget need to be installed, its name is Window title.
 
 My configuration:
@@ -51,7 +100,7 @@ My configuration:
 * Length: Fill available space[]
 * 4px, 0px, 0px
 
-#### Popup Launcher
+**Popup Launcher**
 I'm using this widget to simple switch from Intel and Nvidia GPUs.
 
 First I've created 2 desktop entry in applications menu:
@@ -87,7 +136,7 @@ X-KDE-Username=
 
 then I've selected them applications list in Popup Launcher.
 
-#### Date/Time format
+**Date/Time format**
 The widget is Digital Clock.
 
 I need a format like `Mon 30 | 18:26`:
@@ -95,18 +144,41 @@ I need a format like `Mon 30 | 18:26`:
 ddd d
 ```
 
-#### Logout widget
+**Logout widget**
 The widget is Lock/Logout.
 
 I've disabled everything except the logout button.
 
-### Second panel
+#### Second panel
 This panel is placed on the screen bottom.
 
-#### Layout
+**Layout**
 ```
 ____________________________
 |Process manager only icons|
+```
+
+### Devilspie
+This tool help performs actions on windows as they are created.
+```
+yay -S devilspie
+```
+create rules path `~/.devilspie`.
+
+### Example rules
+Example for Visual Studio Code, file `~/.devilspie/vscode.ds`:
+```
+(if (contains (window_class) "code-oss")
+
+    (begin
+
+        (spawn_async (str "xprop -id " (window_xid) " -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 "))
+
+        (spawn_async (str "xprop -id " (window_xid) " -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xdfffffff"))
+
+    )
+
+)
 ```
 
 ## Terminal/Zsh
@@ -157,27 +229,4 @@ Replaced by systemdboot.
 git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes
 ./install.sh -v -2
-```
-
-## Devilspie
-This tool help performs actions on windows as they are created.
-```
-yay -S devilspie
-```
-create rules path `~/.devilspie`.
-
-### Example rules
-Example for Visual Studio Code, file `~/.devilspie/vscode.ds`:
-```
-(if (contains (window_class) "code-oss")
-
-    (begin
-
-        (spawn_async (str "xprop -id " (window_xid) " -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 "))
-
-        (spawn_async (str "xprop -id " (window_xid) " -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xdfffffff"))
-
-    )
-
-)
 ```
