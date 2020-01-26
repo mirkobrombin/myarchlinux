@@ -4,9 +4,12 @@
 I recently replaced KDE at GNOME for better consistency throughout the user experience.
 
 ### Theme & Icons
-I have a fetish for the official Adwaita theme and icons.
+I'm using Materia dark theme:
+```
+sudo yay -S materia-gtk-theme
+```
 
-The only problem with the Adwaita theme is the large size of the CSD/Titlebar. I solved this problem with a custom rule.
+The only problem with most of GTK3 themes is the large size of the CSD/Titlebar. I solved this problem with a custom rule.
 
 To do this I've created the file in location `~/.config/gtk-3.0/gtk.css` with content:
 ```
