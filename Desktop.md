@@ -34,6 +34,11 @@ The GDM Display Manager come with default GNOME installation:
 sudo systemctl enable gdm
 ```
 
+### GNOME Software integration
+```
+sudo pacman -S gnome-software-packagekit-plugin
+```
+
 ## KDE
 I use Plasma with all KDE applications.
 So, let's add some bloatware:
