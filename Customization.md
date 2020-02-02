@@ -45,6 +45,7 @@ sudo pacman -S chrome-gnome-shell
 - Dynamic panel transparent
 - Kstatusnotifieritem/appindicator support
 - Straight top bar
+- Arch Linux Updates Indicator
 
 ### GNOME Tweaks
 ```
