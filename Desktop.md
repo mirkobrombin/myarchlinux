@@ -64,7 +64,7 @@ pacman -S xf86-video-intel
 
 ### Nvidia drivers
 ```
-pacman -S nvidia nvidia-settings
+pacman -S nvidia-dkms nvidia-settings
 ```
 Some 32-bit libraries are required for playing games via Steam. I need to enable the multilib repository in */etc/pacman.conf* then install them:
 ```
