@@ -3,7 +3,7 @@ I replaced KDE Plasma with GNOME (below both installations).
 
 ## Utility
 ```
-pacman -S linux-headers os-prober git bash-completion man-db man-pages
+pacman -S linux-zen-headers os-prober git bash-completion man-db man-pages
 ```
 
 ## Network manager
