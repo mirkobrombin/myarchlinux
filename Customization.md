@@ -42,10 +42,12 @@ Let's integrate Brave Browser with GNOME:
 sudo pacman -S chrome-gnome-shell 
 ```
 #### Installed Extensions
-- Dynamic panel transparent
+- Fully Transparent Top Bar
 - Kstatusnotifieritem/appindicator support
 - Straight top bar
 - Arch Linux Updates Indicator
+- NoAnnoyance
+- AlternateTab
 
 ### GNOME Tweaks
 ```
