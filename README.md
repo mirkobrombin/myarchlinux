@@ -1,7 +1,7 @@
 # My Arch Linux installation
 This is my complete Arch Linux installation/configuration.
 
-<a href="https://linuxpeople.org/show/03-04-2020--12-22-53 pm-my-archlinux-gnome" title="pubblicato su linuxpeople"><img alt="pubblicato su linuxpeople" src="https://linuxpeople.org/assets/embed.svg" width="135" height="59" /></a>
+<a href="https://linuxpeople.org/show/01-26-2020--07-00-05 pm-btw-myarchlinux-gnome" title="pubblicato su linuxpeople"><img alt="pubblicato su linuxpeople" src="https://linuxpeople.org/assets/embed.svg" width="135" height="59" /></a>
 
 ## GNOME
 ![](https://linuxpeople.org/uploads/DwINdlo7wSBd76QXupRn.png)
