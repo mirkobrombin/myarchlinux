@@ -1,8 +1,27 @@
 # Customization
 
-## GNOME
-I recently replaced KDE at GNOME for better consistency throughout the user experience.
+## Openbox
+### Theme & Icons
+Use `qtconfig-qt4` to change Qt4 themes and `qt5ct` for Qt5.
+Then set env variable to *qt5ct* on `/etc/environment`:
+```
+QT_QPA_PLATFORMTHEME=qt5ct
+```
+Use `lxappearance` to change GTK Themes.
 
+For openbox menu theme I'm using my slate theme, so download from [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfiles/themes/Slate) and place in path:
+```
+/home/YOUR_USERNAME/.themes
+```
+Open `obconf` and select the new theme.
+
+### SDDM Theme
+Download slate theme from my [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfiles/sddm/slate) and place it in:
+```
+/usr/share/sddm/themes/slate
+```
+
+## GNOME
 ### Theme & Icons
 I'm using Materia dark theme:
 ```

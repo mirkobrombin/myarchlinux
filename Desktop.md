@@ -25,6 +25,36 @@ makepkg -si
 pacman -S xorg-server xorg-xinit
 ```
 
+## My Openbox *"Desktop"*
+I'm using openbox with polybar as bar and rofi for menu creation.
+```
+yay -S openbox rofi polybar qtconfig-qt4 qt5ct obconf gnome-keyring xfce4-notifyd networkmanager-dmenu-git xdg-menu spectacle thunar lxappearance
+```
+Copy my [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfiles/config/openbox) to:
+```
+/home/YOUR_USER/.config/openbox
+```
+edit `rc.xml` keybinds with your paths.
+
+### networkmanager-dmenu
+Copy my [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfiles/config/networkmanager-dmenu) to:
+```
+/home/YOUR_USER/.config/networkmanager-dmenu
+```
+
+### SDDM
+I'm using SDDM as display manager with my Slate theme.
+```
+sudo pacman -S sddm
+```
+
+### Polybar
+Copy my [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfiles/config/polybar) to:
+```
+/home/YOUR_USER/.config/polybar
+```
+edit `config.ini` options.
+
 ## GNOME
 ```
 sudo pacman -S gnome gnome-extra
