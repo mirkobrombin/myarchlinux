@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="Terminal">
+    <action name="Execute"><execute>tilix</execute></action>
+  </item>
+  <item label="Brave">
+    <action name="Execute"><execute>brave</execute></action>
+  </item>
+  <item label="Email">
+    <action name="Execute"><execute>thunderbird</execute></action>
+  </item>
+  <item label="Telegram">
+    <action name="Execute"><execute>telegram-desktop</execute></action>
+  </item>
+  <separator />
+  <menu id="applications" label="Applications" execute="xdg_menu --format openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu" />
+  <separator />
+  <item label="Run…">
+    <action name="Execute"><execute>~/.config/openbox/bin/ob_run</execute></action>
+  </item>
+  <separator />
+  <item label="Log Out">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+</menu>
+
+</openbox_menu>

@@ -1,0 +1,131 @@
+# Slate gray Openbox theme
+# Copyright (C) 2020 Mirko Brombin <send@mirko.pm>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+## WINDOW
+border.width: 1
+
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+
+padding.width: 4
+padding.height: 4
+
+window.active.border.color: #181818
+window.inactive.border.color: #181818
+window.active.title.separator.color: #252526
+window.inactive.title.separator.color: #252526
+window.active.client.color: #181818
+window.inactive.client.color: #181818
+
+window.active.label.text.color: #97989c
+window.inactive.label.text.color: #979dac
+
+window.active.button.unpressed.image.color: #97989c
+window.active.button.pressed.image.color: #5294E2
+window.active.button.disabled.image.color: #181818
+window.active.button.hover.image.color: #70788d
+window.active.button.toggled.unpressed.image.color: #97989c
+window.active.button.toggled.pressed.image.color: #5294E2
+window.active.button.toggled.hover.image.color: #70788d
+window.inactive.button.unpressed.image.color: #dddee2
+window.inactive.button.pressed.image.color: #5294E2
+window.inactive.button.disabled.image.color: #181818
+window.inactive.button.hover.image.color: #70788d
+window.inactive.button.toggled.unpressed.image.color: #dddee2
+window.inactive.button.toggled.pressed.image.color: #5294E2
+window.inactive.button.toggled.hover.image.color: #70788d
+
+window.active.title.bg: flat solid
+window.active.title.bg.color: #252526
+window.active.label.bg: flat solid
+window.active.label.bg.color: #252526
+#window.active.handle.bg: texture
+#window.active.grip.bg: texture
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: #252526
+window.inactive.label.bg: flat solid
+window.inactive.label.bg.color: #252526
+#window.inactive.handle.bg: texture
+#window.inactive.grip.bg: texture
+
+window.active.button.unpressed.bg: parentrelative
+window.active.button.pressed.bg: parentrelative
+window.active.button.hover.bg: parentrelative
+window.active.button.disabled.bg: parentrelative
+window.active.button.toggled.unpressed.bg: parentrelative
+window.active.button.toggled.pressed.bg: parentrelative
+window.active.button.toggled.hover.bg: parentrelative
+window.inactive.button.unpressed.bg: parentrelative
+window.inactive.button.pressed.bg: parentrelative
+window.inactive.button.hover.bg: parentrelative
+window.inactive.button.disabled.bg: parentrelative
+window.inactive.button.toggled.unpressed.bg: parentrelative
+window.inactive.button.toggled.pressed.bg: parentrelative
+window.inactive.button.toggled.hover.bg: parentrelative
+
+window.label.text.justify: center
+
+#window.active.label.text.font: text shadow
+#window.inactive.label.text.font: text shadow
+
+## MENU
+menu.border.width: 0
+menu.separator.width: 1
+menu.separator.padding.width: 10
+menu.separator.padding.height: 2
+
+menu.overlap.x: 0
+menu.overlap.y: 0
+
+menu.border.color: #181818
+menu.separator.color: #a8adb5
+
+menu.title.text.color: #97989c
+menu.items.text.color: #a8adb5
+menu.items.disabled.text.color: #76797F
+menu.items.active.text.color: #ffffff
+menu.items.active.disabled.text.color: #181818
+
+menu.items.bg: flat solid
+menu.items.bg.color: #252526
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #a8adb5
+menu.title.bg: flat solid
+menu.title.bg.color: #181818
+
+menu.title.text.justify: center
+
+#menu.items.font: text shadow
+#menu.title.text.font: text shadow
+
+## OSD
+osd.border.width: 1
+
+osd.border.color: #181818
+
+osd.label.text.color: #97989c
+
+osd.bg: flat solid
+osd.bg.color: #252526
+osd.label.bg: flat solid
+osd.label.bg.color: #252526
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #5294E2
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #ffffff
+
+#osd.label.text.font: text shadow
