@@ -1,6 +1,12 @@
 # Applications
 Explanation of special cases and complete list of installed software.
 
+## Vivaldi
+I'm using Vivaldi browser:
+```
+yay -S vivaldi
+```
+
 ## ~~Firefox~~
 ~~I'm using the Firefox package from OpenSUSE beacuse of the correct integration with Global menu:~~
 ```
