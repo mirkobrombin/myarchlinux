@@ -67,6 +67,7 @@ sudo pacman -S chrome-gnome-shell
 - Arch Linux Updates Indicator
 - NoAnnoyance
 - AlternateTab
+- Workspace Scroll
 
 ### GNOME Tweaks
 ```
