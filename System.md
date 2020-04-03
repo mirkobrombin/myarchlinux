@@ -51,7 +51,7 @@ swapon /dev/nvme0n1p2
 ## System installation
 I'm using the `linux-zen` kernel because I found better performance on my machine.
 ```
-pacstrap /mnt base base-devel linux-zen linux-zen-firmware net-tools dialog netctl networkmanager wpa_supplicant efibootmgr dhcpcd nano
+pacstrap /mnt base base-devel linux linux-zen linux-firmware net-tools dialog netctl networkmanager wpa_supplicant efibootmgr dhcpcd nano
 ```
 
 ## fstab
