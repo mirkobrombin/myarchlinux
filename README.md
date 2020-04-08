@@ -3,6 +3,9 @@ This is my complete Arch Linux installation/configuration.
 
 <a href="https://linuxpeople.org/show/01-26-2020--07-00-05 pm-btw-myarchlinux-gnome" title="pubblicato su linuxpeople"><img alt="pubblicato su linuxpeople" src="https://linuxpeople.org/assets/embed.svg" width="135" height="59" /></a>
 
+## XFCE4
+![](https://linuxpeople.org/uploads/INNczB3if9FIIr1XwaIM.png)
+
 ## Openbox
 ![](https://linuxpeople.org/uploads/7zwIalLHbtBcDvO967wZ.png)
 
@@ -12,7 +15,7 @@ This is my complete Arch Linux installation/configuration.
 ## KDE
 ![](https://linuxpeople.org/uploads/n1eFRoCBgOrWGwghMjQk.png)
 
-See gentedilinux post here: [Openbox](https://linuxpeople.org/show/03-22-2020--05-28-41%20pm-my-archlinux-openbox-polybar) [GNOME](https://linuxpeople.org/show/01-26-2020--07-00-05%20pm-btw-myarchlinux-gnome) [KDE](https://linuxpeople.org/show/01-16-2020--08-46-26%20pm-btw-myarchlinux).
+See gentedilinux post here: [XFCE4](https://linuxpeople.org/show/04-08-2020--09-03-16 pm-my-archlinux-xfce4) [Openbox](https://linuxpeople.org/show/03-22-2020--05-28-41%20pm-my-archlinux-openbox-polybar) [GNOME](https://linuxpeople.org/show/01-26-2020--07-00-05%20pm-btw-myarchlinux-gnome) [KDE](https://linuxpeople.org/show/01-16-2020--08-46-26%20pm-btw-myarchlinux).
 
 > Do not use this example as a complete guide for Arch Linux installation.
 
