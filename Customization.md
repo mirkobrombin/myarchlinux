@@ -1,5 +1,20 @@
 # Customization
 
+## XFCE4
+### Theme
+I'm in love with Materia theme:
+```
+yay -S materia-gtk-theme
+```
+
+### Icons
+Using the papirus icon pack:
+```
+papirus-icon-theme
+```
+
+### Lightdm Theme
+
 ## Openbox
 ### Theme & Icons
 Use `qtconfig-qt4` to change Qt4 themes and `qt5ct` for Qt5.

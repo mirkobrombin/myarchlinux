@@ -25,6 +25,33 @@ makepkg -si
 pacman -S xorg-server xorg-xinit
 ```
 
+## XFCE4
+```
+sudo pacman -S xfce4 xfce4-goodies pavucontrol
+```
+
+### LightDM
+```
+sudo pacman -S lightdm lightdm-gtk-greeter
+```
+edit `/etc/lightdm/lightdm-gtk-greeter.conf` and set:
+```
+theme-name=Materia-dark
+icon-theme-name=Papirus-dark
+```
+
+### Taskbar
+Let's add icons in a dock style container with:
+```
+yay -S xfce4-docklike-plugin-git
+```
+
+### Systemtray
+I'm using a different applet for systemtray that use the correct GTK context menu:
+```
+yay -S xfce4-statusnotifier-plugin
+```
+
 ## My Openbox *"Desktop"*
 I'm using openbox with polybar as bar and rofi for menu creation.
 ```
