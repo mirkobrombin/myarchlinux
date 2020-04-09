@@ -36,9 +36,9 @@ sudo pacman -S lightdm lightdm-gtk-greeter
 ```
 
 ### Taskbar
-Let's add icons in a dock style container with:
+Let's add icons in a taskbar style container with:
 ```
-yay -S xfce4-docklike-plugin-git
+yay -S xfce4-taskbar-plugin-git
 ```
 
 ### Systemtray
