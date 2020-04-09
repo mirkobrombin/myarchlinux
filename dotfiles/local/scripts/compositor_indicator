@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Based on @Marckniack work
+# Edit by Mirko Brombin
+# License MIT
+
+# Configuration
+THEME="Papirus"
+DIR="$( cd "$( dirname "/usr/share/icons/${THEME}/24x24/panel" )" >/dev/null 2>&1 && pwd )"
+ICON_ENABLED="$DIR/panel/desktoptrusted.svg"
+ICON_DISABLED="$DIR/panel/desktopdisconnected.svg"
+
+# Check for compositor status
+compEnabled=$(xfconf-query -c xfwm4 -p /general/use_compositing -t bool)
+
+# Toggle compositor and update label
+if [ $compEnabled = true ]
+then 
+    echo "<img>$ICON_ENABLED</img>"
+    echo "<tool>Disable Compositor</tool>"
+    echo "<click>xfconf-query -c xfwm4 -p /general/use_compositing -s false</click>"
+else
+    echo "<img>$ICON_DISABLED</img>"
+    echo "<tool>Enable Compositor </tool>"
+    echo "<click>xfconf-query -c xfwm4 -p /general/use_compositing -s true</click>"
+fi
+
+unset compEnabled
+exit 0

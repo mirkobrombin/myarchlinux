@@ -13,7 +13,26 @@ Using the papirus icon pack:
 papirus-icon-theme
 ```
 
+### germon
+Use germon for custom indicator/scripts:
+```
+yay -S genmon-plugin-common-git
+```
+
+### compositor_indicator
+Indicator and toggle for xfce compositor.
+Download script from my [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfiles/local/scripts) then place in path:
+```
+/home/YOUR_USERNAME/.local/scripts
+```
+so add script on a new germon indicator.
+
 ### Lightdm Theme
+Edit `/etc/lightdm/lightdm-gtk-greeter.conf` and set:
+```
+theme-name=Materia-dark
+icon-theme-name=Papirus-dark
+```
 
 ## Openbox
 ### Theme & Icons

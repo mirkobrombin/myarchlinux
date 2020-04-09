@@ -34,11 +34,6 @@ sudo pacman -S xfce4 xfce4-goodies pavucontrol
 ```
 sudo pacman -S lightdm lightdm-gtk-greeter
 ```
-edit `/etc/lightdm/lightdm-gtk-greeter.conf` and set:
-```
-theme-name=Materia-dark
-icon-theme-name=Papirus-dark
-```
 
 ### Taskbar
 Let's add icons in a dock style container with:
