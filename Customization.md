@@ -95,7 +95,7 @@ Let's integrate Brave Browser with GNOME:
 sudo pacman -S chrome-gnome-shell 
 ```
 #### Installed Extensions
-- Fully Transparent Top Bar
+- Smart transparent topbar
 - Kstatusnotifieritem/appindicator support
 - Straight top bar
 - Arch Linux Updates Indicator
