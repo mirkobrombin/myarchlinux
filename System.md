@@ -49,9 +49,8 @@ swapon /dev/nvme0n1p2
 ```
 
 ## System installation
-I'm using the `linux-zen` kernel because I found better performance on my machine.
 ```
-pacstrap /mnt base base-devel linux linux-zen linux-firmware net-tools dialog netctl networkmanager wpa_supplicant efibootmgr dhcpcd nano
+pacstrap /mnt base base-devel linux linux-firmware net-tools dialog netctl networkmanager wpa_supplicant efibootmgr dhcpcd nano lvm2
 ```
 
 ## fstab
@@ -86,6 +85,16 @@ options root=UUID=1b37449b-c8e6-467a-9c28-39d5e65546d1
 add loader at `/boot/efi/loader/loader.conf`:
 ```
 default arch
+```
+
+### LVM (optional)
+For LVM2 instalaltions edit `/etc/mkinitcpio.conf`, add `lvm2` in `HOOKS`, regenerate the initramfs:
+```
+mkinitcpio -p linux
+```
+in `boot` the `root` options should be set to mapper:
+```
+options root=/dev/mapper/volume-root quiet rw
 ```
 
 ## Hostname
