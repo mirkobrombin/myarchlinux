@@ -92,7 +92,7 @@ For LVM2 instalaltions edit `/etc/mkinitcpio.conf`, add `lvm2` in `HOOKS`, regen
 ```
 mkinitcpio -p linux
 ```
-in `boot` the `root` options should be set to mapper:
+in `/boot/efi/loader/entries/arch.conf`: the `root` options should be set to mapper:
 ```
 options root=/dev/mapper/volume-root quiet rw
 ```
