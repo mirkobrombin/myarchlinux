@@ -39,8 +39,8 @@ options root=UUID=1b37449b-c8e6-467a-9c28-39d5e65546d1 quiet splash loglevel=3 v
 ```
 
 **/etc/fstab**
-* remove `rw` from root (/) and /home options
-* add `noauto,x-systemd.automount` to /home options
+* you can avoid a possibly costly remount of the root partition by changing `ro` to `rw` on systemdboot entry options abd removing it from `/etc/fstab`
+* if **staggered spin-up** is not used, you can disable it on boot to save time
 * replace `relatime` with `noatime` for efi e /home partitions
 
 **/etc/mkinitcpio.conf**

@@ -77,14 +77,36 @@ bootctl --path=/boot/efi install
 ```
 creating a new loader for archlinux installation in `/boot/efi/loader/entries/arch.conf`:
 ```
-title Archlinux
+title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options root=UUID=1b37449b-c8e6-467a-9c28-39d5e65546d1
 ```
 add loader at `/boot/efi/loader/loader.conf`:
 ```
-default arch
+default arch.conf
+```
+
+## yay installation (AUR)
+Yet another yogurt:
+```
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -
+```
+
+### Linux Zen Kernel (optional)
+Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. 
+```
+yay -S linux-zen linux-zen-headers
+```
+
+Create a new entry for systemdboot:
+```
+title Arch Linux Zen
+linux /vmlinuz-linux-zen
+initrd /initramfs-linux-zen.img
+options root=UUID=1b37449b-c8e6-467a-9c28-39d5e65546d1
 ```
 
 ### LVM (optional)

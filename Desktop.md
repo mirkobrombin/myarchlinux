@@ -9,15 +9,7 @@ pacman -S linux-zen-headers os-prober git bash-completion man-db man-pages
 ## Network manager
 During the installation I installed the `networkmanager` package, let's enable the service:
 ```
-systemctl enable NetworkManager
-```
-
-## yay installation
-Yet another yogurt:
-```
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+systemctl enable NetworkManagersi
 ```
 
 ## Xorg installation
