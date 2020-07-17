@@ -15,7 +15,7 @@ This is my complete Arch Linux installation/configuration.
 ## KDE
 ![](https://linuxpeople.org/uploads/n1eFRoCBgOrWGwghMjQk.png)
 
-See gentedilinux post here: [XFCE4](https://linuxpeople.org/show/04-08-2020--09-03-16%20pm-my-archlinux-xfce4) [Openbox](https://linuxpeople.org/show/03-22-2020--05-28-41%20pm-my-archlinux-openbox-polybar) [GNOME](https://linuxpeople.org/show/01-26-2020--07-00-05%20pm-btw-myarchlinux-gnome) [KDE](https://linuxpeople.org/show/01-16-2020--08-46-26%20pm-btw-myarchlinux).
+See linuxpeople post here: [XFCE4](https://linuxpeople.org/show/04-08-2020--09-03-16%20pm-my-archlinux-xfce4) [Openbox](https://linuxpeople.org/show/03-22-2020--05-28-41%20pm-my-archlinux-openbox-polybar) [GNOME](https://linuxpeople.org/show/01-26-2020--07-00-05%20pm-btw-myarchlinux-gnome) [KDE](https://linuxpeople.org/show/01-16-2020--08-46-26%20pm-btw-myarchlinux).
 
 > Do not use this example as a complete guide for Arch Linux installation.
 
