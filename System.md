@@ -61,15 +61,6 @@ arch-chroot /mnt
 ```
 and enable swap in `nano /etc/fstab`.
 
-## ~~GRUB~~
-Replaced by systemdboot.
-
-~~Go with the grub installation:~~
-```
-grub-install /dev/nvme0n1p3
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
 ## Systemdboot
 Go with systemdboot configuration:
 ```
