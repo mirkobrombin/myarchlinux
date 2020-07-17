@@ -18,14 +18,17 @@ yay -S zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### Powerlevel10K
+### Starship
 ```
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+yay -S starship
 ```
-and set as theme on `~/.zshrc`:
+add to the end of `~/.zshrc` file:
 ```
-ZSH_THEME=powerlevel10k/powerlevel10k
+eval "$(starship init zsh)"
 ```
+
+#### Config
+Create `~/.config/starship.toml`, rules [here](https://starship.rs/config/).
 
 ### ZSH plugins
 **zsh-syntax-highlighting**
