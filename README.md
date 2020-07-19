@@ -21,7 +21,7 @@ See linuxpeople post here: [XFCE4](https://linuxpeople.org/show/04-08-2020--09-0
 
 ## Summary
 * [i. System](https://github.com/mirkobrombin/myarchlinux/blob/master/System.md)
-* [ii. Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop.md)
+* [ii. Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop)
 * [iii. Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
 * [iv. Performance](https://github.com/mirkobrombin/myarchlinux/blob/master/Performance.md)
 * [v. Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
