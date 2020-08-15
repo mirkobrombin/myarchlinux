@@ -56,7 +56,13 @@ blacklist nouveau
 
 to `/etc/modprobe.d/nouveau-blacklist.conf`.
 
-Add `nvidia-drm.modeset=1` to the boot flags.
+Add `nvidia-drm.modeset=1` to the boot flags and load nvidia modules in ` /etc/mkinitcpio.conf`:
+
+```
+..
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+..
+```
 
 We need to populate `/etc/X11/xorg.conf` with the following content:
 
