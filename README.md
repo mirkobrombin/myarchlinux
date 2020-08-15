@@ -6,7 +6,7 @@ This is my complete Arch Linux installation/configuration.
 ## Latest preview
 ![](https://linuxpeople.org/uploads/TDjNVz7hl5OSyqqbPdZI.png)
 
-See latest linuxpeople post [here](https://linuxpeople.org/show/08-15-2020--02-00-08 pm-my-archlinux-rog-edition).
+See latest linuxpeople post [here](https://linuxpeople.org/show/08-15-2020--02-00-08%20pm-my-archlinux-rog-edition).
 
 ## Coverage
 * Intel+Nvidia (Optimus)
