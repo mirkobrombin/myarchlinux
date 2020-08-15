@@ -56,6 +56,8 @@ blacklist nouveau
 
 to `/etc/modprobe.d/nouveau-blacklist.conf`.
 
+Add `nvidia-drm.modeset=1` to the boot flags.
+
 We need to populate `/etc/X11/xorg.conf` with the following content:
 
 ```
