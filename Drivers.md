@@ -8,7 +8,7 @@ pacman -S linux-zen-headers os-prober git bash-completion man-db man-pages
 ## Network manager
 During the installation I installed the `networkmanager` package, let's enable the service:
 ```
-systemctl enable NetworkManagersi
+systemctl enable NetworkManager
 ```
 
 ## Xorg installation
