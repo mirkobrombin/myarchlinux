@@ -26,7 +26,7 @@ user_groups="wheel,video,audio,sys,lp,storage,scanner,games,network,disk,input"
 user_shell="zsh" # bash | zsh
 
 # 5) choose language:
-your_language="en_US.UTF-8" # follow the locale syntax
+your_language="en_US.UTF-8 UTF-8" # follow the locale syntax
 
 # 6) choose timezone:
 your_timezone="Europe/Rome" # follow the path in /usr/share/zoneinfo
