@@ -152,8 +152,10 @@ if ! [ -f "install.lock" ]; then
 
     # entering chroot environment
     printf "__________ \n\n"
-    printf "${info}Entering chroot environment..{end}\n"
-    arch-chroot /mnt
+    printf "${info}Now the installation script will be closed. Follow next steps:{end}\n"
+    printf "${info}- arch-chroot /mnt{end}\n"
+    printf "${info}- bash install.sh{end}\n"
+    printf "${info}Installation will be automatically resumed.{end}\n"
     printf "__________ \n\n"
 else
     # resuming installation
