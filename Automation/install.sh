@@ -157,6 +157,7 @@ if ! [ -f "install.lock" ]; then
     printf "${info}- bash install.sh{end}\n"
     printf "${info}Installation will be automatically resumed.${end}\n"
     printf "__________ \n\n"
+    exit 1 || return 1
 else
     # configuring systemdboot
     printf "__________ \n\n"
