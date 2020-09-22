@@ -48,3 +48,5 @@ Download slate theme from my [dotfiles](https://github.com/mirkobrombin/myarchli
 ```
 /usr/share/sddm/themes/slate
 ```
+
+Install `sddm-config-editor-git` and use it to change default theme to `slate`.
