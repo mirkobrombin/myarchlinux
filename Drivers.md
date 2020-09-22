@@ -8,7 +8,7 @@ pacman -S linux-zen-headers os-prober git bash-completion man-db man-pages
 ## Network manager
 During the installation I installed the `networkmanager` package, let's enable the service:
 ```
-systemctl enable NetworkManagersi
+systemctl enable NetworkManager
 ```
 
 ## Xorg installation
@@ -56,11 +56,11 @@ blacklist nouveau
 
 to `/etc/modprobe.d/nouveau-blacklist.conf`.
 
-Add `nvidia-drm.modeset=1` to the boot flags and load nvidia modules in ` /etc/mkinitcpio.conf`:
+Add `nvidia-drm.modeset=1` to the boot flags and load amd and nvidia modules in ` /etc/mkinitcpio.conf`:
 
 ```
 ..
-MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+MODULES=(amdgpu nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 ..
 ```
 
