@@ -24,10 +24,11 @@ There are also other Desktop variations of this configuration explained in the g
 
 ## Summary
 * [i. System](https://github.com/mirkobrombin/myarchlinux/blob/master/System.md)
-* [ii. Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop)
-* [iii. Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
-* [iv. Performance](https://github.com/mirkobrombin/myarchlinux/blob/master/Performance.md)
-* [v. Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
+* [ii. Drivers](https://github.com/mirkobrombin/myarchlinux/blob/master/Drivers.md)
+* [iii. Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop)
+* [iv. Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
+* [v. Performance](https://github.com/mirkobrombin/myarchlinux/blob/master/Performance.md)
+* [vi. Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
 
 ## References
 [ArchWiki](https://wiki.archlinux.org/)
