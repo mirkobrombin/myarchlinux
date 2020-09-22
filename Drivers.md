@@ -123,3 +123,8 @@ enable service via systemctl:
 ```
 systemctl enable optimus-manager
 ```
+
+## Driver (rtl8821ce)
+```
+yay -S rtl8821ce-dkms
+```
