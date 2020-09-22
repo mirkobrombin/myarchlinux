@@ -229,7 +229,7 @@ EOF
         printf "${info}- gnome\n"
         printf "${info}- gdm\n"
         printf "${info}- geary\n"
-        pacman -S gnome gdm geary --no-confirm
+        pacman -S gnome gdm geary --noconfirm
         printf "${info}Enabling gdm service..${end}\n"
         systemctl enable gdm
     fi
@@ -240,7 +240,7 @@ EOF
         printf "${info}- dolphin\n"
         printf "${info}- ksysguard\n"
         printf "${info}- spectacle\n"
-        pacman -S plasma sddm konsole dolphin ksysguard spectacle --no-confirm
+        pacman -S plasma sddm konsole dolphin ksysguard spectacle --noconfirm
         printf "${info}Enabling sddm service..${end}\n"
         systemctl enable sddm
     fi
@@ -266,7 +266,7 @@ EOF
         printf "${info}- lib32-nvidia-utils\n"
         graphics_drivers_packages="$(graphics_drivers_packages) nvidia-dkms nvidia-prime nvidia-settings nvidia-utilz lib32-nvidia-utils"
     fi
-    pacman -S ${graphics_drivers_packages} --no-confirm
+    pacman -S ${graphics_drivers_packages} --noconfirm
     if $amd; then
         printf "${info}Adding amd-ucode.img to boot entry..\n"
         sed -i '/initramfs-linux-zen.img/a initrd /amd-ucode.img' /boot/loader/entries/arch.conf
@@ -280,7 +280,7 @@ EOF
             printf "${info}Configuring drivers for Optimus Technology..${end}\n"
             git clone https://aur.archlinux.org/optimus-manager.git
             cd optimus-manager
-            makepkg -si --no-confirm
+            makepkg -si --noconfirm
             printf "${info}Enabling optimus-manager service..${end}\n"
             systemctl enable optimus-manager
         fi
