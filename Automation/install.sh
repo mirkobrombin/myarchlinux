@@ -135,18 +135,18 @@ if ! [ -f "install.lock" ]; then
 
     # generating fstab
     printf "__________ \n\n"
-    printf "${info}Generating fstab..{end}\n"
+    printf "${info}Generating fstab..${end}\n"
     genfstab -pU /mnt >> /mnt/etc/fstab
     printf "__________ \n\n"
 
     # creating lock file for chroot
     printf "__________ \n\n"
-    printf "${info}Copyng install.sh and lock file to /mnt..{end}\n"
+    printf "${info}Copyng install.sh and lock file to /mnt..${end}\n"
     cp install.sh /mnt
     cp install.lock /mnt
-    printf "${info}Moving to /mnt..{end}\n"
+    printf "${info}Moving to /mnt..${end}\n"
     cd /mnt
-    printf "${info}Locking installation to chroot..{end}\n"
+    printf "${info}Locking installation to chroot..${end}\n"
     touch chroot.lock
     printf "__________ \n\n"
 
@@ -155,14 +155,14 @@ if ! [ -f "install.lock" ]; then
     printf "${info}Now the installation script will be closed. Follow next steps:{end}\n"
     printf "${info}- arch-chroot /mnt{end}\n"
     printf "${info}- bash install.sh{end}\n"
-    printf "${info}Installation will be automatically resumed.{end}\n"
+    printf "${info}Installation will be automatically resumed.${end}\n"
     printf "__________ \n\n"
 else
     # configuring systemdboot
     printf "__________ \n\n"
-    printf "${info}Configuring systemdboot..{end}\n"
+    printf "${info}Configuring systemdboot..${end}\n"
     bootctl --path=/boot install
-    printf "${info}Creating a new boot entry..{end}\n"
+    printf "${info}Creating a new boot entry..${end}\n"
     cat <<EOF >/boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
@@ -173,7 +173,7 @@ EOF
 
     # configuring default entry
     printf "__________ \n\n"
-    printf "${info}Configuring default boot entry..{end}\n"
+    printf "${info}Configuring default boot entry..${end}\n"
     cat <<EOF >/boot/loader/loader.conf
 timeout 3
 default arch.conf
@@ -182,54 +182,54 @@ EOF
 
     # configuring hostname
     printf "__________ \n\n"
-    printf "${info}Configuring device hostname to ${device_hostname}..{end}\n"
+    printf "${info}Configuring device hostname to ${device_hostname}..${end}\n"
     echo ${device_hostname} > /etc/hostname
     printf "__________ \n\n"
 
     # configuring timezone
     printf "__________ \n\n"
-    printf "${info}Configuring timezone to ${your_timezone}..{end}\n"
+    printf "${info}Configuring timezone to ${your_timezone}..${end}\n"
     ln -sf /usr/share/zoneinfo/${your_timezone} /etc/localtime
     printf "__________ \n\n"
 
     # configuring locale
     printf "__________ \n\n"
-    printf "${info}Configuring locale to ${your_language}..{end}\n"
+    printf "${info}Configuring locale to ${your_language}..${end}\n"
     echo ${your_language} >> /etc/locale.gen
-    printf "${info}Generating locale..{end}\n"
+    printf "${info}Generating locale..${end}\n"
     locale-gen
     printf "__________ \n\n"
 
     # creating new user
     printf "__________ \n\n"
-    printf "${info}Creating your new ${user_name} user..{end}\n"
+    printf "${info}Creating your new ${user_name} user..${end}\n"
     useradd -m -g users -G wheel,video,audio,sys,lp,storage,scanner,games,network,disk,input -s /bin/${user_shell} ${user_name}
-    printf "${info}Set a password for ${user_name} user..{end}\n"
+    printf "${info}Set a password for ${user_name} user..${end}\n"
     passwd ${user_name}
     printf "__________ \n\n"
 
     # configuring sudoers
     printf "__________ \n\n"
-    printf "${info}Configuring sudoers..{end}\n"
+    printf "${info}Configuring sudoers..${end}\n"
     sed -i '/## Uncomment to allow members of group wheel to execute any command/a %wheel ALL=(ALL) ALL' /etc/sudoers
 
     # enabling pacman multilib
     printf "__________ \n\n"
-    printf "${info}Enabling pacman multilib..{end}\n"
+    printf "${info}Enabling pacman multilib..${end}\n"
     sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
-    printf "${info}Synchronizing database..{end}\n"
+    printf "${info}Synchronizing database..${end}\n"
     pacman -Sy
 
     # installing desktop
     printf "__________ \n\n"
-    printf "${info}Installing ${desktop} Desktop..{end}\n"
+    printf "${info}Installing ${desktop} Desktop..${end}\n"
     printf "${info}Following packages will be installed:{end}\n"
     if [ $desktop = "gnome"]; then
         printf "${info}- gnome"
         printf "${info}- gdm"
         printf "${info}- geary"
         pacman -S gnome gdm geary --no-confirm
-        printf "${info}Installing ${desktop} Enabling gdm service..{end}\n"
+        printf "${info}Installing ${desktop} Enabling gdm service..${end}\n"
         systemctl enable gdm
     fi
     if [ $desktop = "plasma"]; then
@@ -240,13 +240,13 @@ EOF
         printf "${info}- ksysguard"
         printf "${info}- spectacle"
         pacman -S plasma sddm konsole dolphin ksysguard spectacle --no-confirm
-        printf "${info}Installing ${desktop} Enabling sddm service..{end}\n"
+        printf "${info}Installing ${desktop} Enabling sddm service..${end}\n"
         systemctl enable sddm
     fi
 
     # installing drivers
     printf "__________ \n\n"
-    printf "${info}Installing drivers..{end}\n"
+    printf "${info}Installing drivers..${end}\n"
     printf "${info}Following packages will be installed:{end}\n"
     if $intel; then
         printf "${info}- xf86-video-intel\n"
@@ -276,15 +276,15 @@ EOF
     if [ $optimus_intel_nvidia ] || [ $amd_nvidia ]; then
         printf "__________ \n\n"
         if $optimus_intel_nvidia; then
-            printf "${info}Configuring drivers for Optimus Technology..{end}\n"
+            printf "${info}Configuring drivers for Optimus Technology..${end}\n"
             git clone https://aur.archlinux.org/optimus-manager.git
             cd optimus-manager
             makepkg -si --no-confirm
-            printf "${info}Enabling optimus-manager service..{end}\n"
+            printf "${info}Enabling optimus-manager service..${end}\n"
             systemctl enable optimus-manager
         fi
         if $amd_nvidia; then
-            printf "${info}Configuring drivers for AMD+Nvidia..{end}\n"
+            printf "${info}Configuring drivers for AMD+Nvidia..${end}\n"
             echo "blacklist nouveau" > /etc/modprobe.d/nouveau-blacklist.conf
             sed -i '${s/$/ nvidia-drm.modeset=1/}' /boot/loader/entries/arch.conf
             sed -i -e 's/MODULES(amdgpu)/MODULES(amdgpu nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
@@ -311,6 +311,6 @@ EOF
 
     # Finished installation
     printf "__________ \n\n"
-    printf "${info}Finished installation, you can now restart the device.{end}\n"
+    printf "${info}Finished installation, you can now restart the device.${end}\n"
     printf "__________ \n\n"
 fi
