@@ -158,14 +158,6 @@ if ! [ -f "install.lock" ]; then
     printf "${info}Installation will be automatically resumed.{end}\n"
     printf "__________ \n\n"
 else
-    # resuming installation
-    printf "__________ \n\n"
-    printf "${info}Resuming installation inside chroot environment..{end}\n"
-    arch-chroot /mnt <<"EOT"
-bash install.sh
-EOT
-    printf "__________ \n\n"
-
     # configuring systemdboot
     printf "__________ \n\n"
     printf "${info}Configuring systemdboot..{end}\n"
