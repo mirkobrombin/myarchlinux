@@ -264,7 +264,7 @@ EOF
         printf "${info}- nvidia-settings\n"
         printf "${info}- nvidia-utils\n"
         printf "${info}- lib32-nvidia-utils\n"
-        graphics_drivers_packages="$(graphics_drivers_packages) nvidia-dkms nvidia-prime nvidia-settings nvidia-utilz lib32-nvidia-utils"
+        graphics_drivers_packages="$(graphics_drivers_packages) nvidia-dkms nvidia-prime nvidia-settings nvidia-utils lib32-nvidia-utils"
     fi
     pacman -S ${graphics_drivers_packages} --noconfirm
     if $amd; then
