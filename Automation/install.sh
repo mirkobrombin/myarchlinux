@@ -110,7 +110,7 @@ if ! [ -f "install.lock" ]; then
 
     # system installation
     printf "__________ \n\n"
-    printf "${info}Running pacstrap in /mnt, following packages/groups will be installed:{end}\n"
+    printf "${info}Running pacstrap in /mnt, following packages/groups will be installed:${end}\n"
     printf "${info}- base${end}\n"
     printf "${info}- base-devel${end}\n"
     printf "${info}- os-prober${end}\n"
@@ -152,7 +152,7 @@ if ! [ -f "install.lock" ]; then
 
     # entering chroot environment
     printf "__________ \n\n"
-    printf "${info}Now the installation script will be closed. Follow next steps:{end}\n"
+    printf "${info}Now the installation script will be closed. Follow next steps:${end}\n"
     printf "${info}- arch-chroot /mnt${end}\n"
     printf "${info}- bash install.sh${end}\n"
     printf "${info}Installation will be automatically resumed.${end}\n"
@@ -224,7 +224,7 @@ EOF
     # installing desktop
     printf "__________ \n\n"
     printf "${info}Installing ${desktop} Desktop..${end}\n"
-    printf "${info}Following packages will be installed:{end}\n"
+    printf "${info}Following packages will be installed:${end}\n"
     if [ $desktop = "gnome"]; then
         printf "${info}- gnome"
         printf "${info}- gdm"
@@ -248,7 +248,7 @@ EOF
     # installing drivers
     printf "__________ \n\n"
     printf "${info}Installing drivers..${end}\n"
-    printf "${info}Following packages will be installed:{end}\n"
+    printf "${info}Following packages will be installed:${end}\n"
     if $intel; then
         printf "${info}- xf86-video-intel\n"
         graphics_drivers_packages="$(graphics_drivers_packages) xf86-video-intel"
