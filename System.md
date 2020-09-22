@@ -13,7 +13,7 @@ I have 2 SSDs in my current configuration:
 
 I use the first disk for the path / home while the other for the root (/), the final result is:
 * /dev/nvme1n1p1  238,5G /home
-* /dev/nvme0n1p1  976M /boot/efi
+* /dev/nvme0n1p1  976M /boot
 * /dev/nvme0n1p2  7,6G swap
 * /dev/nvme0n1p3  457,3G /
 
@@ -35,13 +35,13 @@ mkswap /dev/nvme0n1p2
 ### Mount points
 Creating paths for mount points in /mnt:
 ```
-mkdir -p /mnt/home /mnt/boot/efi
+mkdir -p /mnt/home /mnt/boot
 ```
 According with the previous configuration, mount the partitions:
 ```
 mount /dev/nvme0n1p3 /mnt
 mount /dev/nvme1n1p1 /mnt/home
-mount /dev/nvme0n1p1 /mnt/boot/efi
+mount /dev/nvme0n1p1 /mnt/boot
 ```
 And let's swap the swap:
 ```
@@ -64,16 +64,16 @@ and enable swap in `nano /etc/fstab`.
 ## Systemdboot
 Go with systemdboot configuration:
 ```
-bootctl --path=/boot/efi install
+bootctl --path=/boot install
 ```
-creating a new loader for archlinux installation in `/boot/efi/loader/entries/arch.conf`:
+creating a new loader for archlinux installation in `/boot/loader/entries/arch.conf`:
 ```
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options root=UUID=1b37449b-c8e6-467a-9c28-39d5e65546d1
 ```
-add loader at `/boot/efi/loader/loader.conf`:
+add loader at `/boot/loader/loader.conf`:
 ```
 default arch.conf
 ```
@@ -105,7 +105,7 @@ For LVM2 instalaltions edit `/etc/mkinitcpio.conf`, add `lvm2` in `HOOKS`, regen
 ```
 mkinitcpio -p linux
 ```
-in `/boot/efi/loader/entries/arch.conf`: the `root` options should be set to mapper:
+in `/boot/loader/entries/arch.conf`: the `root` options should be set to mapper:
 ```
 options root=/dev/mapper/volume-root quiet rw
 ```
@@ -140,7 +140,7 @@ ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 ```
 exit
 umount /mnt/home
-umount /mnt/boot/efi
+umount /mnt/boot
 umount /mnt
 swapoff
 sync
