@@ -314,4 +314,9 @@ EndSection
 EOF
         fi
     fi
+
+    # Finished installation
+    printf "__________ \n\n"
+    printf "${info}Finished installation, you can now restart the device.{end}\n"
+    printf "__________ \n\n"
 fi
