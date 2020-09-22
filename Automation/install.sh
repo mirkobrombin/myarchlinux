@@ -225,23 +225,23 @@ EOF
     printf "__________ \n\n"
     printf "${info}Installing ${desktop} Desktop..${end}\n"
     printf "${info}Following packages will be installed:${end}\n"
-    if [ $desktop = "gnome"]; then
-        printf "${info}- gnome"
-        printf "${info}- gdm"
-        printf "${info}- geary"
+    if [ $desktop = "gnome" ]; then
+        printf "${info}- gnome\n"
+        printf "${info}- gdm\n"
+        printf "${info}- geary\n"
         pacman -S gnome gdm geary --no-confirm
-        printf "${info}Installing ${desktop} Enabling gdm service..${end}\n"
+        printf "${info}Enabling gdm service..${end}\n"
         systemctl enable gdm
     fi
-    if [ $desktop = "plasma"]; then
-        printf "${info}- plasma"
-        printf "${info}- sddm"
-        printf "${info}- konsole"
-        printf "${info}- dolphin"
-        printf "${info}- ksysguard"
-        printf "${info}- spectacle"
+    if [ $desktop = "plasma" ]; then
+        printf "${info}- plasma\n"
+        printf "${info}- sddm\n"
+        printf "${info}- konsole\n"
+        printf "${info}- dolphin\n"
+        printf "${info}- ksysguard\n"
+        printf "${info}- spectacle\n"
         pacman -S plasma sddm konsole dolphin ksysguard spectacle --no-confirm
-        printf "${info}Installing ${desktop} Enabling sddm service..${end}\n"
+        printf "${info}Enabling sddm service..${end}\n"
         systemctl enable sddm
     fi
 
