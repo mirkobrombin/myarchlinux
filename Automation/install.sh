@@ -40,7 +40,7 @@ desktop="gnome" # (plasma | gnome | xfce4 | none)
 # generating variables
 printf "${info}Generating script variables..${end}\n"
 root_uuid=$(blkid $root_partition | sed -n 's/.*UUID=\"\([^\"]*\)\".*/\1/p')
-graphics_drivers_packages=""
+graphics_drivers_packages=" "
 
 # define message colors
 info='\033[0;36m'
