@@ -55,29 +55,19 @@ if ! [ -f "install.lock" ]; then
     printf "${danger}This installation script is limited to a small number of hardware.${end}\n"
     printf "${danger}Be careful and make sure to have the official Arch Linux Wiki in your hands!${end}\n"
     printf "__________ \n\n"
-
+    
     # printing fdisk -l output
-    printf "__________ \n\n"
-    printf "${info}This installation script is limited to a small number of hardware.${end}\n"
-    printf "${info}Be careful and make sure to have the official Arch Linux Wiki in your hands!${end}\n"
-    printf "__________ \n\n"
-
-    # check for lock file
-    if [ -f "install.lock" ]; then
-        printf "${info}Lock file found, the installation will continue now..${end}\n"
+    printf "${info}These are your partitions, take a note of partition names (/dev/diskX) for the next step:${end}\n"
+    fdisk -l
+    read -p "Did you take note? " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        printf "${info}\nOpening install.sh with nano..${end}\n"
+        nano install.sh
+        touch install.lock
     else
-        printf "${info}These are your partitions, take a note of partition names (/dev/diskX) for the next step:${end}\n"
-        fdisk -l
-        read -p "Did you take note? " -n 1 -r
-        if [[ $REPLY =~ ^[Yy]$ ]]
-        then
-            printf "${info}\nOpening install.sh with nano..${end}\n"
-            nano install.sh
-            touch install.lock
-        else
-            printf "${danger}\nThe installation will be stopped.${end}\n"
-            exit 1 || return 1
-        fi
+        printf "${danger}\nThe installation will be stopped.${end}\n"
+        exit 1 || return 1
     fi
 
     # preparing partitions
