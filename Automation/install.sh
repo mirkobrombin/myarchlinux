@@ -69,7 +69,7 @@ if ! [ -f "install.lock" ]; then
         printf "${info}\nOpening install.sh with nano..${end}\n"
         nano install.sh
         touch install.lock
-        exec "install.sh"
+        exec $(readlink -f "$0")
     else
         printf "${danger}\nThe installation will be stopped.${end}\n"
         exit 1 || return 1
