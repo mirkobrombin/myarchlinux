@@ -54,108 +54,112 @@ warning='\033[1;33m'
 end='\033[0m'
 
 if ! [ -f "install.lock" ]; then
-    # welcome message
-    printf "__________ \n\n"
-    printf "${danger}This installation script is limited to a small number of hardware.${end}\n"
-    printf "${danger}Be careful and make sure to have the official Arch Linux Wiki in your hands!${end}\n"
-    printf "__________ \n\n"
-    
-    # printing fdisk -l output
-    printf "${info}These are your partitions, take a note of partition names (/dev/diskX) for the next step:${end}\n"
-    fdisk -l
-    read -p "Did you take note? " -n 1 -r
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-        printf "${info}\nOpening install.sh with nano..${end}\n"
-        nano install.sh
-        touch install.lock
-        exec $(readlink -f "$0")
+    if ! [ -f "disks.lock" ]; then
+        # welcome message
+        printf "__________ \n\n"
+        printf "${danger}This installation script is limited to a small number of hardware.${end}\n"
+        printf "${danger}Be careful and make sure to have the official Arch Linux Wiki in your hands!${end}\n"
+        printf "__________ \n\n"
+        
+        # printing fdisk -l output
+        printf "${info}These are your partitions, take a note of partition names (/dev/diskX) for the next step:${end}\n"
+        fdisk -l
+        read -p "Did you take note? " -n 1 -r
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            printf "${info}\nOpening install.sh with nano..${end}\n"
+            nano install.sh
+            touch install.lock
+            touch disks.lock
+            exec $(readlink -f "$0")
+        else
+            printf "${danger}\nThe installation will be stopped.${end}\n"
+            exit 1 || return 1
+        fi
     else
-        printf "${danger}\nThe installation will be stopped.${end}\n"
+        # preparing partitions
+        printf "__________ \n\n"
+        printf "${info}Configuring partitions:${end}\n"
+        printf "${info}- ${root_partition} as root partition${end}\n"
+        printf "${info}- ${swap_partition} as swap partition${end}\n"
+        printf "${info}- ${efi_partition} as efi partition${end}\n"
+        printf "${info}Making ext4 file system in ${root_partition}:${end}\n"
+        mkfs.ext4 ${root_partition}
+        printf "${info}Making fat file system in ${efi_partition}:${end}\n"
+        mkfs.fat ${efi_partition}
+        printf "${info}Making swap file system in ${root_partition}:${end}\n"
+        mkswap ${swap_partition}
+        printf "__________ \n\n"
+
+        # preparing mount points
+        printf "__________ \n\n"
+        printf "${info}Mounting ${root_partition} in /mnt..${end}\n"
+        mount ${root_partition} /mnt
+        printf "${info}Creating /mnt/boot mount point for ${efi_partition} partition${end}..\n"
+        mkdir -p /mnt/boot
+        printf "${info}Mounting ${efi_partition} in /mnt/boot..${end}\n"
+        mount ${efi_partition} /mnt/boot
+        printf "__________ \n\n"
+
+        # enabling swap
+        printf "__________ \n\n"
+        printf "${info}Enabling swap partition ${swap_partition}{end}\n"
+        swapon ${swap_partition}
+        printf "__________ \n\n"
+
+        # system installation
+        printf "__________ \n\n"
+        printf "${info}Running pacstrap in /mnt, following packages/groups will be installed:${end}\n"
+        printf "${info}- base${end}\n"
+        printf "${info}- base-devel${end}\n"
+        printf "${info}- os-prober${end}\n"
+        printf "${info}- bash-completion${end}\n"
+        printf "${info}- zsh${end}\n"
+        printf "${info}- linux${end}\n"
+        printf "${info}- linux-headers${end}\n"
+        printf "${info}- linux-firmware${end}\n"
+        printf "${info}- net-tools${end}\n"
+        printf "${info}- dialog${end}\n"
+        printf "${info}- netctl${end}\n"
+        printf "${info}- networkmanager${end}\n"
+        printf "${info}- wpa_supplicant${end}\n"
+        printf "${info}- efibootmgr${end}\n"
+        printf "${info}- dhcpcd${end}\n"
+        printf "${info}- nano${end}\n"
+        printf "${info}- git${end}\n"
+        printf "${info}- wget${end}\n"
+        swapon ${swap_partition}
+        printf "__________ \n\n"
+        pacstrap /mnt base base-devel linux linux-firmware net-tools dialog netctl networkmanager wpa_supplicant efibootmgr dhcpcd nano os-prober bash-completion zsh git wget
+
+        # generating fstab
+        printf "__________ \n\n"
+        printf "${info}Generating fstab..${end}\n"
+        genfstab -pU /mnt >> /mnt/etc/fstab
+        printf "__________ \n\n"
+
+        # creating lock file for chroot
+        printf "__________ \n\n"
+        printf "${info}Copyng install.sh and lock file to /mnt..${end}\n"
+        cp install.sh /mnt
+        cp install.lock /mnt
+        cp disks.lock /mnt
+        printf "${info}Moving to /mnt..${end}\n"
+        cd /mnt
+        printf "${info}Locking installation to chroot..${end}\n"
+        touch chroot.lock
+        printf "__________ \n\n"
+
+        # entering chroot environment
+        printf "__________ \n\n"
+        printf "${info}Now the installation script will be closed. Follow next steps:${end}\n"
+        printf "${info}- arch-chroot /mnt${end}\n"
+        printf "${info}- bash install.sh${end}\n"
+        printf "${info}Installation will be automatically resumed.${end}\n"
+        printf "__________ \n\n"
         exit 1 || return 1
     fi
 else
-
-    # preparing partitions
-    printf "__________ \n\n"
-    printf "${info}Configuring partitions:${end}\n"
-    printf "${info}- ${root_partition} as root partition${end}\n"
-    printf "${info}- ${swap_partition} as swap partition${end}\n"
-    printf "${info}- ${efi_partition} as efi partition${end}\n"
-    printf "${info}Making ext4 file system in ${root_partition}:${end}\n"
-    mkfs.ext4 ${root_partition}
-    printf "${info}Making fat file system in ${efi_partition}:${end}\n"
-    mkfs.fat ${efi_partition}
-    printf "${info}Making swap file system in ${root_partition}:${end}\n"
-    mkswap ${swap_partition}
-    printf "__________ \n\n"
-
-    # preparing mount points
-    printf "__________ \n\n"
-    printf "${info}Mounting ${root_partition} in /mnt..${end}\n"
-    mount ${root_partition} /mnt
-    printf "${info}Creating /mnt/boot mount point for ${efi_partition} partition${end}..\n"
-    mkdir -p /mnt/boot
-    printf "${info}Mounting ${efi_partition} in /mnt/boot..${end}\n"
-    mount ${efi_partition} /mnt/boot
-    printf "__________ \n\n"
-
-    # enabling swap
-    printf "__________ \n\n"
-    printf "${info}Enabling swap partition ${swap_partition}{end}\n"
-    swapon ${swap_partition}
-    printf "__________ \n\n"
-
-    # system installation
-    printf "__________ \n\n"
-    printf "${info}Running pacstrap in /mnt, following packages/groups will be installed:${end}\n"
-    printf "${info}- base${end}\n"
-    printf "${info}- base-devel${end}\n"
-    printf "${info}- os-prober${end}\n"
-    printf "${info}- bash-completion${end}\n"
-    printf "${info}- zsh${end}\n"
-    printf "${info}- linux${end}\n"
-    printf "${info}- linux-headers${end}\n"
-    printf "${info}- linux-firmware${end}\n"
-    printf "${info}- net-tools${end}\n"
-    printf "${info}- dialog${end}\n"
-    printf "${info}- netctl${end}\n"
-    printf "${info}- networkmanager${end}\n"
-    printf "${info}- wpa_supplicant${end}\n"
-    printf "${info}- efibootmgr${end}\n"
-    printf "${info}- dhcpcd${end}\n"
-    printf "${info}- nano${end}\n"
-    printf "${info}- git${end}\n"
-    printf "${info}- wget${end}\n"
-    swapon ${swap_partition}
-    printf "__________ \n\n"
-    pacstrap /mnt base base-devel linux linux-firmware net-tools dialog netctl networkmanager wpa_supplicant efibootmgr dhcpcd nano os-prober bash-completion zsh git wget
-
-    # generating fstab
-    printf "__________ \n\n"
-    printf "${info}Generating fstab..${end}\n"
-    genfstab -pU /mnt >> /mnt/etc/fstab
-    printf "__________ \n\n"
-
-    # creating lock file for chroot
-    printf "__________ \n\n"
-    printf "${info}Copyng install.sh and lock file to /mnt..${end}\n"
-    cp install.sh /mnt
-    cp install.lock /mnt
-    printf "${info}Moving to /mnt..${end}\n"
-    cd /mnt
-    printf "${info}Locking installation to chroot..${end}\n"
-    touch chroot.lock
-    printf "__________ \n\n"
-
-    # entering chroot environment
-    printf "__________ \n\n"
-    printf "${info}Now the installation script will be closed. Follow next steps:${end}\n"
-    printf "${info}- arch-chroot /mnt${end}\n"
-    printf "${info}- bash install.sh${end}\n"
-    printf "${info}Installation will be automatically resumed.${end}\n"
-    printf "__________ \n\n"
-    exit 1 || return 1
 
     # configuring systemdboot
     printf "__________ \n\n"
@@ -248,7 +252,7 @@ EOF
     printf "${info}Configuring extra hooks..${end}\n"
     sed -i -e "s/HOOKS(base)/MODULES(base ${extra_hooks})/g" /etc/mkinitcpio.conf
     mkinitcpio -p linux
-    
+
     # installing drivers
     printf "__________ \n\n"
     printf "${info}Installing drivers..${end}\n"
