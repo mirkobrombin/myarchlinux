@@ -256,7 +256,7 @@ EOF
     # configuring extra hooks
     printf "__________ \n\n"
     printf "${info}Configuring extra hooks..${end}\n"
-    sed -i -e "s/HOOKS=(base udev)/HOOKS=(base systemd ${extra_hooks})/g" /etc/mkinitcpio.conf
+    sed -i -e "s/HOOKS=(base udev autodetect modconf block filesystems keyboard)/HOOKS=(base systemd autodetect modconf block filesystems keyboard ${extra_hooks})/g" /etc/mkinitcpio.conf
     mkinitcpio -p linux
 
     # installing drivers
@@ -284,7 +284,7 @@ EOF
     if $amd; then
         printf "${info}Adding amd-ucode.img to boot entry..\n"
         sed -i '/initramfs-linux-zen.img/a initrd /amd-ucode.img' /boot/loader/entries/arch.conf
-        sed -i -e 's/MODULES()/MODULES(amdgpu)/g' /etc/mkinitcpio.conf
+        sed -i -e 's/MODULES=()/MODULES=(amdgpu)/g' /etc/mkinitcpio.conf
     fi
 
     # configuring drivers
@@ -300,7 +300,7 @@ EOF
             printf "${info}Configuring drivers for AMD+Nvidia..${end}\n"
             echo "blacklist nouveau" > /etc/modprobe.d/nouveau-blacklist.conf
             sed -i '${s/$/ nvidia-drm.modeset=1/}' /boot/loader/entries/arch.conf
-            sed -i -e 's/MODULES(amdgpu)/MODULES(amdgpu nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
+            sed -i -e 's/MODULES=(amdgpu)/MODULES=(amdgpu nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
             cat <<EOF >/etc/X11/xorg.conf
 Section "Device"
   Identifier "iGPU"
