@@ -31,11 +31,14 @@ your_language="en_US.UTF-8 UTF-8" # follow the locale syntax
 # 6) choose timezone:
 your_timezone="Europe/Rome" # follow the path in /usr/share/zoneinfo
 
-# 7) choose your desktop and extra packages:
+# 7) choose your desktop:
 desktop="gnome" # (plasma | gnome | xfce4 | none)
-extra_packages="" # ex. lvm2
 
-# 8) then save with (CTRL+X)
+# 8) extra:
+extra_packages="" # ex. lvm2
+extra_hooks="" # ex. lvm2
+
+# 9) then save with (CTRL+X)
 # ==================================================================
 
 # generating variables
@@ -66,6 +69,7 @@ if ! [ -f "install.lock" ]; then
         printf "${info}\nOpening install.sh with nano..${end}\n"
         nano install.sh
         touch install.lock
+        exec "install.sh"
     else
         printf "${danger}\nThe installation will be stopped.${end}\n"
         exit 1 || return 1
@@ -237,6 +241,11 @@ EOF
         printf "${info}Enabling sddm service..${end}\n"
         systemctl enable sddm
     fi
+
+    # configuring extra hooks
+    printf "__________ \n\n"
+    printf "${info}Configuring extra hooks..${end}\n"
+    sed -i -e "s/HOOKS(base)/MODULES(base ${extra_hooks})/g" /etc/mkinitcpio.conf
 
     # installing drivers
     printf "__________ \n\n"
