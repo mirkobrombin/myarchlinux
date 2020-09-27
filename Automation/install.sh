@@ -74,6 +74,7 @@ if ! [ -f "install.lock" ]; then
         printf "${danger}\nThe installation will be stopped.${end}\n"
         exit 1 || return 1
     fi
+else
 
     # preparing partitions
     printf "__________ \n\n"
@@ -155,7 +156,7 @@ if ! [ -f "install.lock" ]; then
     printf "${info}Installation will be automatically resumed.${end}\n"
     printf "__________ \n\n"
     exit 1 || return 1
-else
+    
     # configuring systemdboot
     printf "__________ \n\n"
     printf "${info}Configuring systemdboot..${end}\n"
