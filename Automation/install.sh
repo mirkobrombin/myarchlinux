@@ -256,7 +256,7 @@ EOF
     # configuring extra hooks
     printf "__________ \n\n"
     printf "${info}Configuring extra hooks..${end}\n"
-    sed -i -e "s/HOOKS=(base udev autodetect modconf block filesystems keyboard)/HOOKS=(base systemd autodetect modconf block filesystems keyboard ${extra_hooks})/g" /etc/mkinitcpio.conf
+    sed -i -e "s/HOOKS=(base udev autodetect modconf block filesystems/HOOKS=(base systemd autodetect modconf block filesystems ${extra_hooks}/g" /etc/mkinitcpio.conf
     mkinitcpio -p linux
 
     # installing drivers
