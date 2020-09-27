@@ -156,7 +156,7 @@ else
     printf "${info}Installation will be automatically resumed.${end}\n"
     printf "__________ \n\n"
     exit 1 || return 1
-    
+
     # configuring systemdboot
     printf "__________ \n\n"
     printf "${info}Configuring systemdboot..${end}\n"
@@ -247,7 +247,8 @@ EOF
     printf "__________ \n\n"
     printf "${info}Configuring extra hooks..${end}\n"
     sed -i -e "s/HOOKS(base)/MODULES(base ${extra_hooks})/g" /etc/mkinitcpio.conf
-
+    mkinitcpio -p linux
+    
     # installing drivers
     printf "__________ \n\n"
     printf "${info}Installing drivers..${end}\n"
