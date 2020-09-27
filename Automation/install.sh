@@ -253,7 +253,7 @@ EOF
     # configuring extra hooks
     printf "__________ \n\n"
     printf "${info}Configuring extra hooks..${end}\n"
-    sed -i -e "s/HOOKS(base)/MODULES(base ${extra_hooks})/g" /etc/mkinitcpio.conf
+    sed -i -e "s/HOOKS=(base udev)/HOOKS=(base systemd ${extra_hooks})/g" /etc/mkinitcpio.conf
     mkinitcpio -p linux
 
     # installing drivers
@@ -289,11 +289,7 @@ EOF
         printf "__________ \n\n"
         if $optimus_intel_nvidia; then
             printf "${info}Configuring drivers for Optimus Technology..${end}\n"
-            su ${user_name}
-            cd && git clone https://aur.archlinux.org/optimus-manager.git
-            cd optimus-manager
-            makepkg -si --noconfirm
-            exit
+            runuser -l ${user_name} -c "cd && git clone https://aur.archlinux.org/optimus-manager.git && cd optimus-manager && makepkg -si --noconfirm"
             printf "${info}Enabling optimus-manager service..${end}\n"
             systemctl enable optimus-manager
         fi
