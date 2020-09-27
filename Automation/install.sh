@@ -54,29 +54,31 @@ warning='\033[1;33m'
 end='\033[0m'
 
 if ! [ -f "install.lock" ]; then
-    if ! [ -f "disks.lock" ]; then
-        # welcome message
-        printf "__________ \n\n"
-        printf "${danger}This installation script is limited to a small number of hardware.${end}\n"
-        printf "${danger}Be careful and make sure to have the official Arch Linux Wiki in your hands!${end}\n"
-        printf "__________ \n\n"
-        
-        # printing fdisk -l output
-        printf "${info}These are your partitions, take a note of partition names (/dev/diskX) for the next step:${end}\n"
-        fdisk -l
-        read -p "Did you take note? " -n 1 -r
-        if [[ $REPLY =~ ^[Yy]$ ]]
-        then
-            printf "${info}\nOpening install.sh with nano..${end}\n"
-            nano install.sh
-            touch install.lock
-            touch disks.lock
-            exec $(readlink -f "$0")
-        else
-            printf "${danger}\nThe installation will be stopped.${end}\n"
-            exit 1 || return 1
-        fi
+    # welcome message
+    printf "__________ \n\n"
+    printf "${danger}This installation script is limited to a small number of hardware.${end}\n"
+    printf "${danger}Be careful and make sure to have the official Arch Linux Wiki in your hands!${end}\n"
+    printf "__________ \n\n"
+    
+    # printing fdisk -l output
+    printf "${info}These are your partitions, take a note of partition names (/dev/diskX) for the next step:${end}\n"
+    fdisk -l
+    read -p "Did you take note? " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        printf "${info}\nOpening install.sh with nano..${end}\n"
+        nano install.sh
+        touch install.lock
+        exec $(readlink -f "$0")
     else
+        printf "${danger}\nThe installation will be stopped.${end}\n"
+        exit 1 || return 1
+    fi
+
+
+
+if [ -f "install.lock" ]; then
+    if ! [ -f "disks.lock" ]; then
         # preparing partitions
         printf "__________ \n\n"
         printf "${info}Configuring partitions:${end}\n"
@@ -148,6 +150,7 @@ if ! [ -f "install.lock" ]; then
         cd /mnt
         printf "${info}Locking installation to chroot..${end}\n"
         touch chroot.lock
+        touch disks.lock
         printf "__________ \n\n"
 
         # entering chroot environment
@@ -159,7 +162,6 @@ if ! [ -f "install.lock" ]; then
         printf "__________ \n\n"
         exit 1 || return 1
     fi
-else
 
     # configuring systemdboot
     printf "__________ \n\n"
