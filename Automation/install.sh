@@ -74,6 +74,7 @@ if ! [ -f "install.lock" ]; then
         printf "${danger}\nThe installation will be stopped.${end}\n"
         exit 1 || return 1
     fi
+fi
 
 
 
