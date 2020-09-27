@@ -210,6 +210,9 @@ EOF
     printf "__________ \n\n"
     printf "${info}Creating your new ${user_name} user..${end}\n"
     useradd -m -g users -G wheel,video,audio,sys,lp,storage,scanner,games,network,disk,input -s /bin/${user_shell} ${user_name}
+    if [$user_shell = "zsh"]; then
+        touch /home/$(user_name)/.zshrc
+    fi
     printf "${info}Set a password for ${user_name} user..${end}\n"
     passwd ${user_name}
     printf "__________ \n\n"
