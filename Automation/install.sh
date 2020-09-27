@@ -31,8 +31,9 @@ your_language="en_US.UTF-8 UTF-8" # follow the locale syntax
 # 6) choose timezone:
 your_timezone="Europe/Rome" # follow the path in /usr/share/zoneinfo
 
-# 7) choose your desktop:
+# 7) choose your desktop and extra packages:
 desktop="gnome" # (plasma | gnome | xfce4 | none)
+extra_packages="" # ex. lvm2
 
 # 8) then save with (CTRL+X)
 # ==================================================================
@@ -78,6 +79,8 @@ if ! [ -f "install.lock" ]; then
     printf "${info}- ${efi_partition} as efi partition${end}\n"
     printf "${info}Making ext4 file system in ${root_partition}:${end}\n"
     mkfs.ext4 ${root_partition}
+    printf "${info}Making fat file system in ${efi_partition}:${end}\n"
+    mkfs.fat ${efi_partition}
     printf "${info}Making swap file system in ${root_partition}:${end}\n"
     mkswap ${swap_partition}
     printf "__________ \n\n"
@@ -219,7 +222,7 @@ EOF
         printf "${info}- gnome\n"
         printf "${info}- gdm\n"
         printf "${info}- geary\n"
-        pacman -S gnome gdm geary --noconfirm
+        pacman -S gnome gdm geary ${extra_packages} --noconfirm
         printf "${info}Enabling gdm service..${end}\n"
         systemctl enable gdm
     fi
@@ -230,7 +233,7 @@ EOF
         printf "${info}- dolphin\n"
         printf "${info}- ksysguard\n"
         printf "${info}- spectacle\n"
-        pacman -S plasma sddm konsole dolphin ksysguard spectacle --noconfirm
+        pacman -S plasma sddm konsole dolphin ksysguard spectacle ${extra_packages} --noconfirm
         printf "${info}Enabling sddm service..${end}\n"
         systemctl enable sddm
     fi
@@ -268,9 +271,11 @@ EOF
         printf "__________ \n\n"
         if $optimus_intel_nvidia; then
             printf "${info}Configuring drivers for Optimus Technology..${end}\n"
-            git clone https://aur.archlinux.org/optimus-manager.git
+            su ${user_name}
+            cd && git clone https://aur.archlinux.org/optimus-manager.git
             cd optimus-manager
             makepkg -si --noconfirm
+            exit
             printf "${info}Enabling optimus-manager service..${end}\n"
             systemctl enable optimus-manager
         fi
