@@ -79,3 +79,44 @@ color brightmagenta start="\[" end="\]"
 color yellow "^( )*(\*|\+|\-|[0-9]+\.) "
 
 ```
+
+## Plymouth
+Install `plymouth` from AUR:
+
+```
+yay -S plymouth
+```
+
+we also need `gdm-plymouth` for installation with GDM as Desktop Manager:
+
+```
+yay -S gdm-plymouth
+```
+
+Edit `/etc/mkinitcpio.conf`, add `sd-plymouth` after `systemd` in `HOOKS` section:
+
+```
+...
+HOOKS=(base systemd sd-plymouth ..)
+...
+```
+
+Edit the boot entry to add `splash` kernel option after `quiet`.
+
+### Theme
+I'm using the BGRT theme that show a spinner with the bios logo. 
+
+In `/etc/plymouth/plymouthd.conf` :
+
+```
+[Daemon]
+Theme=bgrt
+ShowDelay=0
+DeviceTimeout=8
+```
+
+set `ShowDelay` to `0`, then regenerate the theme:
+
+```
+plymouth-set-default-theme -R bgrt
+```

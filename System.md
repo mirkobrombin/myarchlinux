@@ -78,6 +78,8 @@ add loader at `/boot/loader/loader.conf`:
 default arch.conf
 ```
 
+Replace `udev` with `systemd` in `/etc/mkinitcpio.conf`, in `HOOKS` section.
+
 ## yay installation (AUR)
 Yet another yogurt:
 ```
