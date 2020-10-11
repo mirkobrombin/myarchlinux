@@ -14,8 +14,7 @@ I have 2 SSDs in my current configuration:
 I use the first disk for the path / home while the other for the root (/), the final result is:
 * /dev/nvme1n1p1  238,5G /home
 * /dev/nvme0n1p1  976M /boot
-* /dev/nvme0n1p2  7,6G swap
-* /dev/nvme0n1p3  457,3G /
+* /dev/nvme0n1p3  464,3G /
 
 ## File systems
 For my configuration I use the ext4 file system for the root and home paths:
@@ -26,10 +25,6 @@ mkfs.ext4 /dev/nvme0n1p3
 The EFI partition requires the FAT file system:
 ```
 mkfs.fat /dev/nvme0n1p1
-```
-And let's swap the swap:
-```
-mkswap /dev/nvme0n1p2
 ```
 
 ### Mount points
@@ -42,11 +37,6 @@ According with the previous configuration, mount the partitions:
 mount /dev/nvme0n1p3 /mnt
 mount /dev/nvme1n1p1 /mnt/home
 mount /dev/nvme0n1p1 /mnt/boot
-```
-And let's swap the swap:
-```
-swapon /dev/nvme0n1p2
-```
 
 ## System installation
 ```
@@ -59,7 +49,6 @@ Generate fstab and enter chroot:
 genfstab -pU /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
-and enable swap in `nano /etc/fstab`.
 
 ## Systemdboot
 Go with systemdboot configuration:
@@ -144,7 +133,6 @@ exit
 umount /mnt/home
 umount /mnt/boot
 umount /mnt
-swapoff
 sync
 reboot
 ```
