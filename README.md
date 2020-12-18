@@ -23,12 +23,12 @@ There are also other Desktop variations of this configuration explained in the g
 > Do not use this example as a complete guide for Arch Linux installation.
 
 ## Summary
-* [i. System](https://git.mirko.pm/brombinmirko/myarchlinux/-/blob/master/System.md)
-* [ii. Drivers](https://git.mirko.pm/brombinmirko/myarchlinux/-/blob/master/Drivers.md)
-* [iii. Desktop](https://git.mirko.pm/brombinmirko/myarchlinux/-/tree/master/Desktop)
-* [iv. Customization](https://git.mirko.pm/brombinmirko/myarchlinux/-/blob/master/Customization.md)
-* [v. Performance](https://git.mirko.pm/brombinmirko/myarchlinux/-/blob/master/Performance.md)
-* [vi. Applications](https://git.mirko.pm/brombinmirko/myarchlinux/-/blob/master/Applications.md)
+* [i. System](https://github.com/mirkobrombin/myarchlinux/blob/master/System.md)
+* [ii. Drivers](https://github.com/mirkobrombin/myarchlinux/blob/master/Drivers.md)
+* [iii. Desktop](https://github.com/mirkobrombin/myarchlinux/blob/master/Desktop)
+* [iv. Customization](https://github.com/mirkobrombin/myarchlinux/blob/master/Customization.md)
+* [v. Performance](https://github.com/mirkobrombin/myarchlinux/blob/master/Performance.md)
+* [vi. Applications](https://github.com/mirkobrombin/myarchlinux/blob/master/Applications.md)
 
 ## References
 [ArchWiki](https://wiki.archlinux.org/)

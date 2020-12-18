@@ -37,6 +37,7 @@ According with the previous configuration, mount the partitions:
 mount /dev/nvme0n1p3 /mnt
 mount /dev/nvme1n1p1 /mnt/home
 mount /dev/nvme0n1p1 /mnt/boot
+```
 
 ## System installation
 ```
