@@ -3,10 +3,6 @@ This is my complete Arch Linux installation and configurations.
 
 <a href="https://linuxpeople.org/show/08-15-2020--02-00-08 pm-my-archlinux-rog-edition" title="published on linuxpeople"><img alt="published on linuxpeople" src="https://linuxpeople.org/assets/embed.svg" width="135" height="59" /></a>
 
-
-> **This repository is moved to: https://git.mirko.pm/brombinmirko/myarchlinux**
-
-
 ## Latest preview
 ![](https://linuxpeople.org/uploads/TDjNVz7hl5OSyqqbPdZI.png)
 
