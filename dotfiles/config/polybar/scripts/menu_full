@@ -34,20 +34,21 @@ LIGHT_BLUE="#039be5"
 LIGHT_GREEN="#7cb342"
 
 # Launch Rofi
-rofi -no-lazy-grab -show drun \
--display-drun "Applications :" -drun-display-format "{name}" \
+rofi -no-lazy-grab -combi-modi drun -show combi \
+-display-drun "" -drun-display-format "{name}" \
+-sidebar-mode \
 -hide-scrollbar true \
 -bw 0 \
--lines 10 \
+-lines 19 \
 -line-padding 15 \
--padding 60 \
+-padding 15 \
 -width 30 \
--xoffset 10 -yoffset 40 \
+-height 80 \
+-xoffset 0 -yoffset 28 \
 -location 1 \
--fullscreen \
--columns 4 \
--show-icons -icon-theme "Tela" \
--font "Fira Sans Mono 10" \
+-columns 1 \
+-show-icons -icon-theme "Adwaita" \
+-font "Fira Sans Mono 11" \
 -color-enabled true \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \

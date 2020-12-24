@@ -22,28 +22,28 @@ window.client.padding.height: 0
 window.handle.width: 0
 
 padding.width: 4
-padding.height: 4
+padding.height: 8
 
-window.active.border.color: #181818
-window.inactive.border.color: #181818
-window.active.title.separator.color: #252526
+window.active.border.color: #191919
+window.inactive.border.color: #191919
+window.active.title.separator.color: #191919
 window.inactive.title.separator.color: #252526
-window.active.client.color: #181818
-window.inactive.client.color: #181818
+window.active.client.color: #191919
+window.inactive.client.color: #191919
 
-window.active.label.text.color: #97989c
+window.active.label.text.color: #FFFFFF
 window.inactive.label.text.color: #979dac
 
 window.active.button.unpressed.image.color: #97989c
 window.active.button.pressed.image.color: #5294E2
-window.active.button.disabled.image.color: #181818
+window.active.button.disabled.image.color: #191919
 window.active.button.hover.image.color: #70788d
 window.active.button.toggled.unpressed.image.color: #97989c
 window.active.button.toggled.pressed.image.color: #5294E2
 window.active.button.toggled.hover.image.color: #70788d
 window.inactive.button.unpressed.image.color: #dddee2
 window.inactive.button.pressed.image.color: #5294E2
-window.inactive.button.disabled.image.color: #181818
+window.inactive.button.disabled.image.color: #191919
 window.inactive.button.hover.image.color: #70788d
 window.inactive.button.toggled.unpressed.image.color: #dddee2
 window.inactive.button.toggled.pressed.image.color: #5294E2
@@ -86,13 +86,16 @@ window.label.text.justify: center
 menu.border.width: 0
 menu.separator.width: 1
 menu.separator.padding.width: 10
-menu.separator.padding.height: 2
+menu.separator.padding.height: 10
 
 menu.overlap.x: 0
 menu.overlap.y: 0
 
 menu.border.color: #181818
 menu.separator.color: #a8adb5
+
+menu.items.padding.width: 10
+menu.items.padding.height: 10
 
 menu.title.text.color: #97989c
 menu.items.text.color: #a8adb5

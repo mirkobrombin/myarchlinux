@@ -1,0 +1,3 @@
+#!/bin/bash
+window_name=$($HOME/.config/polybar/scripts/spotify -f '{artist}')
+xdotool search -name "$window_name" windowactivate

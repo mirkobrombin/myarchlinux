@@ -43,7 +43,7 @@ rofi -no-lazy-grab -show window \
 -padding 60 \
 -width 70 \
 -columns 10 \
--show-icons -icon-theme "Tela" \
+-show-icons -icon-theme "Adwaita" \
 -font "Fira Sans Mono 12" \
 -color-enabled true \
 -kb-cancel "Alt+Escape,Escape" \

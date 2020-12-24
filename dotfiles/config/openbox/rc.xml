@@ -58,9 +58,9 @@
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Fira Sans</name>
-      <size>10</size>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -215,18 +215,18 @@
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute"> 
-        <command>amixer set Master 10%+</command>
+      <action name="Execute">
+        <command>pactl set-sink-volume 0 +15%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer set Master 10%-</command>
+        <command>pactl set-sink-volume 0 -15%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
-      <action name="Execute"> 
-        <command>amixer set Master toggle</command>
+      <action name="Execute">
+        <command>pactl set-sink-mute 0 toggle</command>
       </action>
     </keybind>
     <!-- Keybindings for desktop switching -->

@@ -4,22 +4,16 @@
 
 <menu id="root-menu" label="Openbox 3">
   <item label="Terminal">
-    <action name="Execute"><execute>tilix</execute></action>
+    <action name="Execute"><execute>gnome-terminal</execute></action>
   </item>
   <item label="Brave">
-    <action name="Execute"><execute>brave</execute></action>
+    <action name="Execute"><execute>flatpak run org.mozilla.firefox</execute></action>
   </item>
   <item label="Email">
-    <action name="Execute"><execute>thunderbird</execute></action>
+    <action name="Execute"><execute>flatpak run org.gnome.Geary </execute></action>
   </item>
   <item label="Telegram">
-    <action name="Execute"><execute>telegram-desktop</execute></action>
-  </item>
-  <separator />
-  <menu id="applications" label="Applications" execute="xdg_menu --format openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu" />
-  <separator />
-  <item label="Run…">
-    <action name="Execute"><execute>~/.config/openbox/bin/ob_run</execute></action>
+    <action name="Execute"><execute>flatpak run org.telegram.desktop </execute></action>
   </item>
   <separator />
   <item label="Log Out">
