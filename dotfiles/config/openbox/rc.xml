@@ -93,7 +93,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
+      <name>Fira Sans</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>bold</weight>
@@ -102,7 +102,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
+      <name>Fira Sans</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>bold</weight>
@@ -199,9 +199,25 @@
         <execute>spectacle -r</execute>
       </action>
     </keybind>
+    <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
-      <action name="execute">
-        <execute>/home/mirko/.config/polybar/scripts/overview_full</execute>
+      <action name="NextWindow">
+        <dialog>icons</dialog>
+        <bar>no</bar>
+        <raise>yes</raise>
+      </action>
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow">
+        <dialog>icons</dialog>
+        <bar>no</bar>
+        <raise>yes</raise>
+      </action>
+    </keybind>
+    <keybind key="C-A-Tab">
+      <action name="NextWindow">
+        <panels>yes</panels>
+        <desktop>yes</desktop>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessUp">

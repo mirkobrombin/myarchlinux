@@ -2,13 +2,13 @@
 
 # Custom Rofi Script
 
-BORDER="#1F1F1F"
-SEPARATOR="#1F1F1F"
+BORDER="#191919"
+SEPARATOR="#191919"
 FOREGROUND="#FFFFFF"
-BACKGROUND="#1F1F1F"
+BACKGROUND="#191919"
 BACKGROUND_ALT="#252525"
 HIGHLIGHT_BACKGROUND="#039be5"
-HIGHLIGHT_FOREGROUND="#1F1F1F"
+HIGHLIGHT_FOREGROUND="#191919"
 
 BLACK="#000000"
 WHITE="#ffffff"
@@ -47,9 +47,10 @@ rofi -no-lazy-grab -show window \
 -font "Fira Sans Mono 12" \
 -color-enabled true \
 -kb-cancel "Alt+Escape,Escape" \
--kb-accept-entry "!Alt-Tab,Return" \
+-kb-accept-entry "!Alt-Tab,!Alt+Alt_L" \
 -kb-row-down "Alt+Tab,Alt+Down" \
 -kb-row-up "Alt+ISO_Left_Tab,Alt+Up" \
+-selected-row 1 \
 -window-format {t} \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
