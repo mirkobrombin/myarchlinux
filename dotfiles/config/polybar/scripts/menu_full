@@ -47,7 +47,7 @@ rofi -no-lazy-grab -combi-modi drun -show combi \
 -xoffset 0 -yoffset 28 \
 -location 1 \
 -columns 1 \
--show-icons -icon-theme "Adwaita" \
+-show-icons -icon-theme "Tela" \
 -font "Fira Sans Mono 11" \
 -color-enabled true \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \

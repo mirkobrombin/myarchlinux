@@ -45,7 +45,7 @@ rofi -no-lazy-grab -show window \
 -xoffset 50 -yoffset 28 \
 -location 1 \
 -columns 2 \
--show-icons -icon-theme "Adwaita" \
+-show-icons -icon-theme "Tela" \
 -font "Fira Sans Mono 11" \
 -window-format {t} \
 -color-enabled true \
