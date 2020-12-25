@@ -186,7 +186,7 @@
     </keybind>
     <keybind key="Print">
       <action name="execute">
-        <execute>spectacle -f</execute>
+        <execute>/home/mirko/.config/polybar/scripts/screenshot</execute>
       </action>
     </keybind>
     <keybind key="A-Print">
@@ -204,14 +204,12 @@
       <action name="NextWindow">
         <dialog>icons</dialog>
         <bar>no</bar>
-        <raise>yes</raise>
       </action>
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow">
         <dialog>icons</dialog>
         <bar>no</bar>
-        <raise>yes</raise>
       </action>
     </keybind>
     <keybind key="C-A-Tab">
