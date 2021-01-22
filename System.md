@@ -153,3 +153,29 @@ the line:
 ```
 wheel ALL=(ALL) ALL
 ```
+
+## Ethernet
+I'm using a cabled connection, so I need to boot up the card with the system.
+
+Enable and start the `dhcpd` service:
+```bash
+systemctl enable dhcpcd.service
+systemctl start dhcpcd.service
+```
+
+Find the card name (`enp4s0` in my case):
+
+```bash
+ip addr | sed '/^[0-9]/!d;s/: <.*$//'
+```
+
+Adjust the `/etc/rc.conf` to fit your setup:
+
+```
+interface="enp4s0"
+address=
+netmask=
+gateway=
+```
+
+Only the `interface` parameter is needed.
