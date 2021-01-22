@@ -52,7 +52,8 @@ systemctl mask lvm2-monitor
 ```
 
 ## Zram (compcache)
-First, enable the module, add `zram` in `/etc/modules-load.d/zram.conf`. I want 2 zram nodes, so thi sis my `/etc/modprobe.d/zram.conf` file:
+First, enable the module, add `zram` in `/etc/modules-load.d/zram.conf`.
+I want 2 zram nodes, so this is my `/etc/modprobe.d/zram.conf` file:
 ```
 options zram num_devices=2
 ```
