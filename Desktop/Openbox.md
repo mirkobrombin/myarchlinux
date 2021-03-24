@@ -1,7 +1,7 @@
 # Openbox
 I'm using openbox with polybar as bar and rofi for menu creation.
 ```
-pary -S openbox rofi polybar qtconfig-qt4 qt5ct obconf gnome-keyring xfce4-notifyd networkmanager-dmenu-git xdg-menu spectacle thunar lxappearance feh
+paru -S openbox rofi polybar qtconfig-qt4 qt5ct obconf gnome-keyring xfce4-notifyd networkmanager-dmenu-git xdg-menu spectacle thunar lxappearance feh
 ```
 Copy my [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfiles/config/openbox) to:
 ```

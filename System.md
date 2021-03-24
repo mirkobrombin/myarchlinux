@@ -70,18 +70,18 @@ default arch.conf
 
 Replace `udev` with `systemd` in `/etc/mkinitcpio.conf`, in `HOOKS` section.
 
-## pary installation (AUR)
+## paru installation (AUR)
 Yet another yogurt:
 ```
-git clone https://aur.archlinux.org/pary.git
-cd pary
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
 ```
 
 ### Linux Zen Kernel (optional)
 Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. 
 ```
-pary -S linux-zen linux-zen-headers
+paru -S linux-zen linux-zen-headers
 ```
 
 Create a new entry for systemdboot:

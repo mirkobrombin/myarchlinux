@@ -31,7 +31,7 @@ I'm using 2 different themes:
 ### Kvantum
 I'm using kvantum to add some blur to the windows:
 ```
-pary -S kvantum
+paru -S kvantum
 ```
 
 ### Panels

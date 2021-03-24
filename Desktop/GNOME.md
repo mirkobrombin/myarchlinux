@@ -16,7 +16,7 @@ pacman -S gnome-software-packagekit-plugin
 ### Theme & Icons
 I'm using Materia dark theme:
 ```
-sudo pary -S materia-gtk-theme
+sudo paru -S materia-gtk-theme
 ```
 
 The only problem with most of GTK3 themes is the large size of the CSD/Titlebar. I solved this problem with a custom rule.

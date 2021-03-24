@@ -11,20 +11,20 @@ pacman -S lightdm lightdm-gtk-greeter
 ## Taskbar
 Let's add icons in a taskbar style container with:
 ```
-pary -S xfce4-taskbar-plugin-git
+paru -S xfce4-taskbar-plugin-git
 ```
 
 ## Systemtray
 I'm using a different applet for systemtray that use the correct GTK context menu:
 ```
-pary -S xfce4-statusnotifier-plugin
+paru -S xfce4-statusnotifier-plugin
 ```
 
 ## Customization
 ### Theme
 I'm in love with Materia theme:
 ```
-pary -S materia-gtk-theme
+paru -S materia-gtk-theme
 ```
 
 ### Icons
@@ -36,7 +36,7 @@ papirus-icon-theme
 ### germon
 Use germon for custom indicator/scripts:
 ```
-pary -S genmon-plugin-common-git
+paru -S genmon-plugin-common-git
 ```
 
 ### compositor_indicator
