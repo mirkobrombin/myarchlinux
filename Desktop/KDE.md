@@ -2,7 +2,7 @@
 I use Plasma with all KDE applications.
 So, let's add some bloatware:
 ```
-sudo pacman -S plasma kde-applications kdeconnect
+pacman -S plasma kde-applications kdeconnect
 ```
 The installation includes the Display Manager SDDM, so enable the service to use it:
 ```
@@ -31,7 +31,7 @@ I'm using 2 different themes:
 ### Kvantum
 I'm using kvantum to add some blur to the windows:
 ```
-yay -S kvantum
+pary -S kvantum
 ```
 
 ### Panels

@@ -70,18 +70,18 @@ default arch.conf
 
 Replace `udev` with `systemd` in `/etc/mkinitcpio.conf`, in `HOOKS` section.
 
-## yay installation (AUR)
+## pary installation (AUR)
 Yet another yogurt:
 ```
-git clone https://aur.archlinux.org/yay.git
-cd yay
+git clone https://aur.archlinux.org/pary.git
+cd pary
 makepkg -si
 ```
 
 ### Linux Zen Kernel (optional)
 Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. 
 ```
-yay -S linux-zen linux-zen-headers
+pary -S linux-zen linux-zen-headers
 ```
 
 Create a new entry for systemdboot:

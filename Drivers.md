@@ -117,7 +117,7 @@ pacman -S lib32-libglvnd lib32-nvidia-utils
 
 ### optimus-manager
 ```
-yay -S optimus-manager
+pary -S optimus-manager
 ```
 enable service via systemctl:
 ```
@@ -126,5 +126,5 @@ systemctl enable optimus-manager
 
 ## Driver (rtl8821ce)
 ```
-yay -S rtl8821ce-dkms
+pary -S rtl8821ce-dkms
 ```

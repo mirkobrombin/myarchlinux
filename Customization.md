@@ -5,12 +5,12 @@ As shell I am using ZSH with oh-my-zsh and Powerlevel10K.
 
 I'm using the Nerd font in Konsole:
 ```
-yay -S nerd-fonts-hack
+pary -S nerd-fonts-hack
 ```
 
 ### ZSH
 ```
-yay -S zsh
+pary -S zsh
 ```
 
 ### Oh my ZSH
@@ -20,7 +20,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ### Starship
 ```
-yay -S starship
+pary -S starship
 ```
 add to the end of `~/.zshrc` file:
 ```
@@ -84,13 +84,13 @@ color yellow "^( )*(\*|\+|\-|[0-9]+\.) "
 Install `plymouth` from AUR:
 
 ```
-yay -S plymouth
+pary -S plymouth
 ```
 
 we also need `gdm-plymouth` for installation with GDM as Desktop Manager:
 
 ```
-yay -S gdm-plymouth
+pary -S gdm-plymouth
 ```
 
 Edit `/etc/mkinitcpio.conf`, add `sd-plymouth` after `systemd` in `HOOKS` section:

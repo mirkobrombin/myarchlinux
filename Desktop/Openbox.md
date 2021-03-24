@@ -1,7 +1,7 @@
 # Openbox
 I'm using openbox with polybar as bar and rofi for menu creation.
 ```
-yay -S openbox rofi polybar qtconfig-qt4 qt5ct obconf gnome-keyring xfce4-notifyd networkmanager-dmenu-git xdg-menu spectacle thunar lxappearance feh
+pary -S openbox rofi polybar qtconfig-qt4 qt5ct obconf gnome-keyring xfce4-notifyd networkmanager-dmenu-git xdg-menu spectacle thunar lxappearance feh
 ```
 Copy my [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfiles/config/openbox) to:
 ```
@@ -18,7 +18,7 @@ Copy my [dotfiles](https://github.com/mirkobrombin/myarchlinux/tree/master/dotfi
 ## SDDM
 I'm using SDDM as display manager with my Slate theme.
 ```
-sudo pacman -S sddm
+pacman -S sddm
 ```
 
 ## Polybar

@@ -1,6 +1,6 @@
 # GNOME 
 ```
-sudo pacman -S gnome gnome-extra
+pacman -S gnome gnome-extra
 ```
 The GDM Display Manager come with default GNOME installation:
 ```
@@ -9,14 +9,14 @@ sudo systemctl enable gdm
 
 ### GNOME Software integration
 ```
-sudo pacman -S gnome-software-packagekit-plugin
+pacman -S gnome-software-packagekit-plugin
 ```
 
 ## Customization
 ### Theme & Icons
 I'm using Materia dark theme:
 ```
-sudo yay -S materia-gtk-theme
+sudo pary -S materia-gtk-theme
 ```
 
 The only problem with most of GTK3 themes is the large size of the CSD/Titlebar. I solved this problem with a custom rule.
@@ -49,7 +49,7 @@ Thanks to Reddit user LapoC.
 ### Extensions
 Let's integrate Brave Browser with GNOME:
 ```
-sudo pacman -S chrome-gnome-shell 
+pacman -S chrome-gnome-shell 
 ```
 #### Installed Extensions
 - Smart transparent topbar
@@ -62,5 +62,5 @@ sudo pacman -S chrome-gnome-shell
 
 ### GNOME Tweaks
 ```
-sudo pacman -S gnome-tweaks
+pacman -S gnome-tweaks
 ```
