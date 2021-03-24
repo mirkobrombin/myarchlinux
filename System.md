@@ -128,16 +128,6 @@ Link Europe/Rome timezone ti localtime:
 ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 ```
 
-## Ready to reboot
-```
-exit
-umount /mnt/home
-umount /mnt/boot
-umount /mnt
-sync
-reboot
-```
-
 ## Users
 After reboot I've added a new user:
 ```
@@ -179,3 +169,24 @@ gateway=
 ```
 
 Only the `interface` parameter is needed.
+
+## PipeWire
+It provides a low-latency, graph based processing engine on top of audio and 
+video devices that can be used to support the use cases currently handled by 
+both pulseaudio and JACK. 
+
+```
+pacman -S pipewire pipewire-pulse --needed
+```
+
+## Ready to reboot
+Don't reboot right away if you have anything else to install (e.g. a Desktop Environment).
+
+```
+exit
+umount /mnt/home
+umount /mnt/boot
+umount /mnt
+sync
+reboot
+```
