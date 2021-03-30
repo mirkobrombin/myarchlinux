@@ -120,3 +120,18 @@ set `ShowDelay` to `0`, then regenerate the theme:
 ```
 plymouth-set-default-theme -R bgrt
 ```
+
+### Fonts
+#### Emoji
+I'm using `noto-fonts-emoji` for CBDT/CBLC, `ttf-twemoji-color` for SVG and `ttf-symbola` for outline:
+
+```
+paru -S noto-fonts-emoji ttf-twemoji-color ttf-symbola
+```
+
+#### Chinese, Japanese, Korean, Vietnamese
+This is a large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look:
+
+```
+paru -S noto-fonts-cjk 
+```
