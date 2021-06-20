@@ -57,7 +57,7 @@ pacman -S chrome-gnome-shell
 - Straight top bar
 - Arch Linux Updates Indicator
 - NoAnnoyance
-- AlternateTab
+- ~~AlternateTab~~ [How to set up the window switcher without using the extension](https://blogs.gnome.org/fmuellner/2018/10/11/the-future-of-alternatetab-and-why-you-need-not-worry/)
 - Workspace Scroll
 
 ### GNOME Tweaks
